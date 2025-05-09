@@ -1,6 +1,6 @@
 "use client"
 
-import { X, Sparkles } from "lucide-react"
+import { X, Sparkles, Info } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 
@@ -34,6 +34,18 @@ export default function SidebarMenu({ isOpen, onClose }: SidebarMenuProps) {
             <Sparkles className="h-5 w-5" />
             <span className="text-lg font-medium">New Chat</span>
           </Button>
+        </div>
+        
+        <div className="px-4 py-2">
+          <Link href="/stroke" onClick={onClose}>
+            <Button
+              variant="ghost"
+              className="w-full bg-white rounded-full py-6 flex items-center justify-start px-6 gap-2"
+            >
+              <Info className="h-5 w-5 text-indigo-600" />
+              <span className="text-lg font-medium">What is Stroke?</span>
+            </Button>
+          </Link>
         </div>
 
         <div className="mt-auto p-4">
