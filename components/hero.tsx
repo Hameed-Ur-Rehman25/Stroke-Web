@@ -9,33 +9,33 @@ export default function Hero() {
   
   const slides = [
     {
-      title: "Stroke Early Detection",
-      subtitle: "Your Personal Stroke Health Assistant, 24/7.",
-      description: "Recognize stroke symptoms instantly and get immediate guidance. Our AI stroke assistance chat offers rapid symptom checking, personalized recommendations for next steps, and detailed recovery guidance plans – all created and validated by our team of experienced neurologists and stroke specialists.",
+      title: "What is FamCare 24/7?",
+      subtitle: "Your Stroke Caregiving Assistant",
+      description: "FamCare 24/7 is a WhatsApp-based chatbot designed to provide family caregivers of stroke patients with instant support and reliable resources—all FREE.",
       color: "from-blue-500 to-indigo-600"
     },
     {
-      title: "Stroke Care Validated by Specialists",
-      subtitle: "Advanced Stroke AI Meets Medical Expertise.",
-      description: "Our chatbot uses LLMs fine-tuned on stroke-specific medical data, patient-specialist conversations, and stroke treatment protocols. Our specialized AI system understands stroke symptoms and provides accurate, time-sensitive guidance. Every recommendation and recovery plan is validated by stroke medical professionals to ensure it meets clinical standards.",
+      title: "Here's how we can help:",
+      subtitle: "Comprehensive Support for Caregivers",
+      description: "Expert Advice: Access accurate, trusted answers to your stroke-related questions.\nTailored Resources: Find educational videos, caregiving tips, and emotional guidance.\n24/7 Availability: Get help anytime, day or night, at your convenience.\nUser-Friendly Chatbot: Enjoy seamless, simple conversations with our AI-powered assistant.",
       color: "from-purple-500 to-pink-500"
     },
     {
-      title: "Emergency Response Guidance",
-      subtitle: "Critical Time-Saving Information.",
-      description: "When every minute counts, our AI provides clear, step-by-step guidance for stroke emergencies. Learn the FAST method (Face, Arms, Speech, Time) for stroke detection and get location-based emergency service information to ensure rapid response and treatment.",
+      title: "What we offer:",
+      subtitle: "Resources for Caregivers",
+      description: "• Common health questions answered for caregivers.\n• Tailored stroke care info for families.\n• Videos and resources to ease caregiving.\n• AI-powered chatbot for stroke caregivers.\n• 24/7 personalized support in real time.\n• Accessible via website and mobile app.",
       color: "from-red-500 to-orange-500"
     },
     {
-      title: "Rehabilitation Support",
-      subtitle: "Recovery Journey Companion.",
-      description: "Post-stroke recovery requires ongoing support. Our AI offers personalized rehabilitation exercises, monitors progress, and provides encouragement throughout your recovery journey, helping to improve outcomes and quality of life after stroke.",
+      title: "Why Choose Us?",
+      subtitle: "Expert Support for Your Journey",
+      description: "Because we understand your challenges. FamCare 24/7 was developed by experts in stroke care who know what caregivers need most—answers, support, and reassurance.\n\nWe're here to make your caregiving journey more manageable by offering personalized tools and resources at no cost to you.",
       color: "from-green-500 to-teal-500"
     },
     {
-      title: "Prevention Strategies",
-      subtitle: "Reduce Your Risk Factors.",
-      description: "Understanding your personal risk factors is key to preventing stroke. Our AI analyzes your lifestyle and medical history to provide tailored prevention strategies, helping you make informed decisions about diet, exercise, and medication management.",
+      title: "Where can you find us?",
+      subtitle: "Always Available on WhatsApp",
+      description: "FamCare 24/7 operates exclusively on WhatsApp, providing family caregivers of stroke patients with instant access to tailored guidance, resources, and compassionate support. Whether you're seeking answers or emotional reassurance, we're here for you—anytime, anywhere.\n\nWith our expertise in bot AI and in Stroke evaluation, we have the backing of AI Engineers and professional medicals behind us, ensuring our products always function at a high standard!",
       color: "from-cyan-500 to-blue-500"
     }
   ];
@@ -80,8 +80,16 @@ export default function Hero() {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, delay: 0.3 }}
         >
-          the Stroke Health Chat
+          FamCare24/7
         </motion.h2>
+        <motion.p
+          className="text-2xl font-medium text-purple-600"
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+        >
+          Your 24/7 support system for family caregivers of stroke patients
+        </motion.p>
       </motion.div>
 
       <div className="mt-8 relative">
@@ -116,7 +124,11 @@ export default function Hero() {
               </div>
             </div>
 
-            <p className="text-gray-600 mt-4 min-h-[160px]">{slides[firstSlideIndex].description}</p>
+            <p className="text-gray-600 mt-4 min-h-[160px]">
+              {slides[firstSlideIndex].description.split('\n').map((text, i) => (
+                <span key={i} className="block mb-2">{text}</span>
+              ))}
+            </p>
             <div className="w-full h-full absolute top-0 left-0 bg-gradient-to-br from-transparent to-indigo-50 opacity-50 pointer-events-none"></div>
           </motion.div>
 
@@ -156,7 +168,11 @@ export default function Hero() {
                 </div>
               </div>
 
-              <p className="text-gray-600 mt-4 min-h-[160px]">{slides[secondSlideIndex].description}</p>
+              <p className="text-gray-600 mt-4 min-h-[160px]">
+                {slides[secondSlideIndex].description.split('\n').map((text, i) => (
+                  <span key={i} className="block mb-2">{text}</span>
+                ))}
+              </p>
               <div className="w-full h-full absolute top-0 left-0 bg-gradient-to-br from-transparent to-pink-50 opacity-50 pointer-events-none"></div>
             </motion.div>
           )}
@@ -208,13 +224,19 @@ export default function Hero() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.5 }}
       >
-        <p className="text-gray-700 font-semibold">Try Stroke Health Chat Now</p>
+        <p className="text-gray-700 font-semibold text-xl">Join us today! Whether you're ready...</p>
+        <p className="text-gray-600 text-center max-w-2xl mb-2">
+          Connect with us on WhatsApp today to experience compassionate expert-backed guidance--completely FREE
+        </p>
         <motion.div
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
         >
-          <Button className="bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white font-semibold rounded-md px-8 py-3 shadow-lg hover:shadow-xl transition-all">
-            Start Consultation
+          <Button className="bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white font-semibold rounded-md px-8 py-3 shadow-lg hover:shadow-xl transition-all flex items-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="white">
+              <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.677.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.72.045.419-.1.824z"/>
+            </svg>
+            Chat on WhatsApp
           </Button>
         </motion.div>
       </motion.div>

@@ -1,11 +1,11 @@
 import React from 'react';
 import { Metadata } from 'next';
 import Link from 'next/link';
-import { MapPin, Phone, Mail, Clock, AlertCircle, Heart, Activity } from 'lucide-react';
-import StrokeRiskAssessment from '@/components/stroke-risk-assessment';
+import { MapPin, Phone, Mail, Clock, AlertCircle, Heart, Activity, Brain } from 'lucide-react';
+import Image from 'next/image';
 
 export const metadata: Metadata = {
-  title: 'What is Stroke | StrokeAI',
+  title: 'What is Stroke | FamCare24/7',
   description: 'Learn about stroke, its types, symptoms, and burden in Malaysia.',
 };
 
@@ -17,63 +17,108 @@ export default function StrokeInfoPage() {
       </h1>
       
       <section className="mb-10">
-        <h2 className="text-2xl font-semibold mb-4 text-gray-800">Understanding Stroke</h2>
-        <p className="text-gray-700 mb-4">
-          A stroke occurs when blood supply to part of the brain is interrupted or reduced, preventing brain tissue from 
-          getting oxygen and nutrients. Brain cells begin to die within minutes. A stroke is a medical emergency that requires 
-          immediate attention.
-        </p>
-        <p className="text-gray-700 mb-4">
-          The good news is that strokes can be treated and prevented, and many fewer Americans die of stroke now than in the past.
-        </p>
-      </section>
-
-      <section className="mb-10">
-        <h2 className="text-2xl font-semibold mb-4 text-gray-800">Types of Stroke</h2>
-        
-        <div className="mb-6">
-          <h3 className="text-xl font-medium mb-2 text-indigo-700">Ischemic Stroke</h3>
-          <p className="text-gray-700">
-            This is the most common type of stroke, accounting for about 87% of all cases. An ischemic stroke happens 
-            when blood flow through an artery that supplies oxygen-rich blood to the brain becomes blocked.
-          </p>
-        </div>
-        
-        <div className="mb-6">
-          <h3 className="text-xl font-medium mb-2 text-indigo-700">Hemorrhagic Stroke</h3>
-          <p className="text-gray-700">
-            A hemorrhagic stroke occurs when an artery in the brain leaks blood or ruptures. The leaked blood puts pressure 
-            on brain cells and damages them. High blood pressure and aneurysms are examples of conditions that can cause a 
-            hemorrhagic stroke.
-          </p>
-        </div>
-        
-        <div className="mb-6">
-          <h3 className="text-xl font-medium mb-2 text-indigo-700">Transient Ischemic Attack (TIA)</h3>
-          <p className="text-gray-700">
-            Also known as a mini-stroke, a TIA is like a warning. It's caused by a temporary clot and doesn't cause permanent 
-            damage. However, about 1 in 3 people who have a TIA will eventually have a stroke, with about half occurring within 
-            a year after the TIA.
-          </p>
+        <div className="flex flex-col md:flex-row gap-6 items-center">
+          <div className="flex-1">
+            <h2 className="text-2xl font-semibold mb-4 text-gray-800">Understanding Stroke</h2>
+            <p className="text-gray-700 mb-4">
+              A stroke occurs when blood supply to part of the brain is interrupted or reduced, preventing brain tissue from 
+              getting oxygen and nutrients. Brain cells begin to die within minutes. A stroke is a medical emergency that requires 
+              immediate attention.
+            </p>
+          </div>
+          
+          <div className="md:w-1/3 bg-indigo-50 p-5 rounded-lg shadow-md flex justify-center items-center">
+            <div className="relative w-full h-64">
+              <Image 
+                src="/brain-stroke-illustration.svg" 
+                alt="Brain with stroke illustration" 
+                width={300}
+                height={240}
+                className="p-4 object-contain"
+              />
+            </div>
+          </div>
         </div>
       </section>
 
       <section className="mb-10">
-        <h2 className="text-2xl font-semibold mb-4 text-gray-800">Symptoms of Stroke</h2>
-        <p className="text-gray-700 mb-4">
-          The FAST acronym is an easy way to remember the sudden signs of stroke:
-        </p>
-        <ul className="list-disc list-inside mb-4 text-gray-700">
-          <li className="mb-2"><span className="font-medium text-indigo-700">F</span>ace drooping: Does one side of the face droop or is it numb?</li>
-          <li className="mb-2"><span className="font-medium text-indigo-700">A</span>rm weakness: Is one arm weak or numb?</li>
-          <li className="mb-2"><span className="font-medium text-indigo-700">S</span>peech difficulty: Is speech slurred or strange?</li>
-          <li className="mb-2"><span className="font-medium text-indigo-700">T</span>ime to call emergency services if you see any of these signs.</li>
-        </ul>
-        <p className="text-gray-700">
-          Other symptoms include sudden numbness or weakness, especially on one side of the body; sudden confusion or trouble 
-          understanding speech; sudden trouble seeing in one or both eyes; sudden trouble walking, dizziness, or loss of balance; 
-          and sudden severe headache with no known cause.
-        </p>
+        <div className="flex flex-col md:flex-row-reverse gap-6 items-center">
+          <div className="flex-1">
+            <h2 className="text-2xl font-semibold mb-4 text-gray-800">Types of Stroke</h2>
+            
+            <div className="mb-6">
+              <h3 className="text-xl font-medium mb-2 text-indigo-700">Ischemic Stroke</h3>
+              <p className="text-gray-700">
+                This is the most common type of stroke, accounting for about 87% of all cases. An ischemic stroke happens 
+                when blood flow through an artery that supplies oxygen-rich blood to the brain becomes blocked.
+              </p>
+            </div>
+            
+            <div className="mb-6">
+              <h3 className="text-xl font-medium mb-2 text-indigo-700">Hemorrhagic Stroke</h3>
+              <p className="text-gray-700">
+                A hemorrhagic stroke occurs when an artery in the brain leaks blood or ruptures. The leaked blood puts pressure 
+                on brain cells and damages them. High blood pressure and aneurysms are examples of conditions that can cause a 
+                hemorrhagic stroke.
+              </p>
+            </div>
+            
+            <div className="mb-6">
+              <h3 className="text-xl font-medium mb-2 text-indigo-700">Transient Ischemic Attack (TIA)</h3>
+              <p className="text-gray-700">
+                Also known as a mini-stroke, a TIA is like a warning. It's caused by a temporary clot and doesn't cause permanent 
+                damage. However, about 1 in 3 people who have a TIA will eventually have a stroke, with about half occurring within 
+                a year after the TIA.
+              </p>
+            </div>
+          </div>
+          
+          <div className="md:w-1/3 bg-purple-50 p-5 rounded-lg shadow-md flex justify-center items-center">
+            <div className="relative w-full h-64">
+              <Image 
+                src="/stroke-types-illustration.svg" 
+                alt="Different types of stroke illustrated" 
+                width={300}
+                height={240}
+                className="p-4 object-contain"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="mb-10">
+        <div className="flex flex-col md:flex-row gap-6 items-center">
+          <div className="flex-1">
+            <h2 className="text-2xl font-semibold mb-4 text-gray-800">Symptoms of Stroke</h2>
+            <p className="text-gray-700 mb-4">
+              The FAST acronym is an easy way to remember the sudden signs of stroke:
+            </p>
+            <ul className="list-disc list-inside mb-4 text-gray-700">
+              <li className="mb-2"><span className="font-medium text-indigo-700">F</span>ace drooping: Does one side of the face droop or is it numb?</li>
+              <li className="mb-2"><span className="font-medium text-indigo-700">A</span>rm weakness: Is one arm weak or numb?</li>
+              <li className="mb-2"><span className="font-medium text-indigo-700">S</span>peech difficulty: Is speech slurred or strange?</li>
+              <li className="mb-2"><span className="font-medium text-indigo-700">T</span>ime to call emergency services if you see any of these signs.</li>
+            </ul>
+            <p className="text-gray-700">
+              Other symptoms include sudden numbness or weakness, especially on one side of the body; sudden confusion or trouble 
+              understanding speech; sudden trouble seeing in one or both eyes; sudden trouble walking, dizziness, or loss of balance; 
+              and sudden severe headache with no known cause.
+            </p>
+          </div>
+          
+          <div className="md:w-1/3 bg-red-50 p-5 rounded-lg shadow-md flex justify-center items-center">
+            <div className="relative w-full h-64">
+              <Image 
+                src="/stroke-symptoms-fast.svg" 
+                alt="FAST symptoms of stroke illustrated" 
+                width={300}
+                height={240}
+                className="p-4 object-contain"
+              />
+            </div>
+          </div>
+        </div>
       </section>
 
       <section className="mb-10 bg-gradient-to-r from-indigo-50 to-purple-50 p-6 rounded-lg">
@@ -107,8 +152,6 @@ export default function StrokeInfoPage() {
           </div>
         </div>
       </section>
-
-      <StrokeRiskAssessment />
 
       <section className="mb-12">
         <h2 className="text-2xl font-semibold mb-4 text-gray-800">Prevention and Treatment</h2>

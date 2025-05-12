@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300">
+  <style>
+    .heading { font-family: Arial; font-size: 16px; font-weight: bold; }
+    .title { font-family: Arial; font-size: 14px; font-weight: bold; }
+    .desc { font-family: Arial; font-size: 10px; }
+  </style>
+  
+  <!-- Background -->
+  <rect x="0" y="0" width="300" height="300" fill="#f9fafb" opacity="0.2"/>
+  
+  <!-- Title -->
+  <text x="150" y="30" text-anchor="middle" class="heading" fill="#7C3AED">FAST Warning Signs</text>
+  
+  <!-- F - Face -->
+  <g transform="translate(30, 60)">
+    <rect x="0" y="0" width="100" height="100" rx="10" fill="#F3E8FF" stroke="#7C3AED" stroke-width="2"/>
+    
+    <text x="50" y="25" text-anchor="middle" class="title" fill="#7C3AED">F</text>
+    <text x="50" y="85" text-anchor="middle" class="desc">Face Drooping</text>
+    
+    <!-- Face illustration -->
+    <circle cx="35" cy="50" r="20" fill="#FDA4AF" stroke="#9D174D" stroke-width="1"/>
+    <circle cx="65" cy="50" r="20" fill="#FDA4AF" stroke="#9D174D" stroke-width="1" transform="scale(0.8, 1.2) translate(14, -8)"/>
+    
+    <!-- Normal eye and mouth -->
+    <circle cx="30" cy="45" r="3" fill="#1E293B"/>
+    <!-- Drooping eye and mouth -->
+    <circle cx="70" cy="50" r="3" fill="#1E293B"/>
+    <path d="M25,55 Q35,60 40,55" stroke="#1E293B" stroke-width="2" fill="none"/>
+    <path d="M60,65 Q62,75 70,70" stroke="#1E293B" stroke-width="2" fill="none"/>
+  </g>
+  
+  <!-- A - Arm -->
+  <g transform="translate(170, 60)">
+    <rect x="0" y="0" width="100" height="100" rx="10" fill="#E0E7FF" stroke="#4338CA" stroke-width="2"/>
+    
+    <text x="50" y="25" text-anchor="middle" class="title" fill="#4338CA">A</text>
+    <text x="50" y="85" text-anchor="middle" class="desc">Arm Weakness</text>
+    
+    <!-- Arm illustrations -->
+    <line x1="30" y1="40" x2="30" y2="50" stroke="#1E293B" stroke-width="8" stroke-linecap="round"/>
+    <line x1="30" y1="50" x2="30" y2="70" stroke="#1E293B" stroke-width="4" stroke-linecap="round" transform="rotate(-40 30 50)"/>
+    
+    <line x1="70" y1="40" x2="70" y2="50" stroke="#1E293B" stroke-width="8" stroke-linecap="round"/>
+    <line x1="70" y1="50" x2="70" y2="70" stroke="#1E293B" stroke-width="4" stroke-linecap="round" transform="rotate(40 70 50)"/>
+    
+    <!-- Strength indicators -->
+    <circle cx="30" cy="35" r="12" fill="#A7F3D0" stroke="#059669" stroke-width="2"/>
+    <text x="30" y="39" text-anchor="middle" font-family="Arial" font-size="12" font-weight="bold">✓</text>
+    
+    <circle cx="70" cy="35" r="12" fill="#FEE2E2" stroke="#B91C1C" stroke-width="2"/>
+    <text x="70" y="39" text-anchor="middle" font-family="Arial" font-size="14" font-weight="bold">✗</text>
+  </g>
+  
+  <!-- S - Speech -->
+  <g transform="translate(30, 180)">
+    <rect x="0" y="0" width="100" height="100" rx="10" fill="#FFEDD5" stroke="#D97706" stroke-width="2"/>
+    
+    <text x="50" y="25" text-anchor="middle" class="title" fill="#D97706">S</text>
+    <text x="50" y="85" text-anchor="middle" class="desc">Speech Difficulty</text>
+    
+    <!-- Speech bubble with garbled text -->
+    <path d="M20,40 h40 a10,10 0 0 1 10,10 v15 a10,10 0 0 1 -10,10 h-20 l-10,10 v-10 h-10 a10,10 0 0 1 -10,-10 v-15 a10,10 0 0 1 10,-10 z" 
+          fill="white" stroke="#D97706" stroke-width="2"/>
+    
+    <text x="40" y="55" text-anchor="middle" font-family="Arial" font-size="10" fill="#D97706">???</text>
+    <text x="50" y="55" text-anchor="middle" font-family="Arial" font-size="11" fill="#D97706" transform="rotate(10 50 55)">!</text>
+  </g>
+  
+  <!-- T - Time -->
+  <g transform="translate(170, 180)">
+    <rect x="0" y="0" width="100" height="100" rx="10" fill="#DCFCE7" stroke="#15803D" stroke-width="2"/>
+    
+    <text x="50" y="25" text-anchor="middle" class="title" fill="#15803D">T</text>
+    <text x="50" y="85" text-anchor="middle" class="desc">Time to Call 999</text>
+    
+    <!-- Clock illustration -->
+    <circle cx="50" cy="50" r="25" fill="white" stroke="#15803D" stroke-width="2"/>
+    <circle cx="50" cy="50" r="2" fill="#15803D"/>
+    
+    <!-- Clock hands -->
+    <line x1="50" y1="50" x2="50" y2="30" stroke="#15803D" stroke-width="2" stroke-linecap="round"/>
+    <line x1="50" y1="50" x2="65" y2="50" stroke="#15803D" stroke-width="2" stroke-linecap="round"/>
+    
+    <!-- Emergency symbol -->
+    <path d="M80,40 l5,5 l-5,5 M85,45 h-10" stroke="#E11D48" stroke-width="2" stroke-linecap="round"/>
+    <circle cx="80" cy="45" r="12" fill="none" stroke="#E11D48" stroke-width="2" stroke-dasharray="2,1"/>
+  </g>
+</svg> 

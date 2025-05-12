@@ -1,7 +1,7 @@
 export default function ChatExample() {
   return (
     <section className="px-6 max-w-6xl mx-auto my-16">
-      <h2 className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-purple-600 mb-6">Welcome to the strokebot.ai</h2>
+      <h2 className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-purple-600 mb-6">Welcome to the FamCare24/7</h2>
 
       <div className="bg-white rounded-xl p-6 shadow-lg border border-indigo-100">
         <div className="bg-gradient-to-br from-indigo-900 to-purple-900 rounded-xl p-8 relative overflow-hidden">
@@ -54,7 +54,7 @@ export default function ChatExample() {
         </div>
         
         <div className="mt-4 flex justify-center">
-          <p className="text-indigo-600 text-sm font-medium">Powered by advanced AI models trained on stroke medical expertise</p>
+          <p className="text-indigo-600 text-sm font-medium">Powered by advanced AI models trained to support family caregivers</p>
         </div>
       </div>
     </section>

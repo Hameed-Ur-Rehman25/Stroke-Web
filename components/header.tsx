@@ -22,7 +22,7 @@ export default function Header() {
             <span className="sr-only">Menu</span>
           </Button>
           <Link href="/" className="text-2xl font-semibold bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 transition-all duration-300">
-            StrokeAI
+            FamCare24/7
           </Link>
         </div>
         <div className="flex items-center gap-3">

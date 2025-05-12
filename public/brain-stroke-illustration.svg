@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300">
+  <!-- Brain outline -->
+  <path d="M150,50 C100,50 60,80 60,150 C60,220 100,250 150,250 C200,250 240,220 240,150 C240,80 200,50 150,50 Z" 
+    fill="#f8f0f8" stroke="#6B46C1" stroke-width="3"/>
+  
+  <!-- Brain details -->
+  <path d="M150,50 C130,70 120,100 120,150 C120,200 130,230 150,250" 
+    fill="none" stroke="#6B46C1" stroke-width="2" stroke-linecap="round"/>
+  <path d="M90,80 C110,100 120,120 120,150 C120,180 110,200 90,220" 
+    fill="none" stroke="#6B46C1" stroke-width="2" stroke-linecap="round"/>
+  <path d="M210,80 C190,100 180,120 180,150 C180,180 190,200 210,220" 
+    fill="none" stroke="#6B46C1" stroke-width="2" stroke-linecap="round"/>
+  
+  <!-- Brain convolutions -->
+  <path d="M70,100 Q90,90 70,80" fill="none" stroke="#6B46C1" stroke-width="2"/>
+  <path d="M70,120 Q90,110 70,100" fill="none" stroke="#6B46C1" stroke-width="2"/>
+  <path d="M70,140 Q90,130 70,120" fill="none" stroke="#6B46C1" stroke-width="2"/>
+  <path d="M70,160 Q90,150 70,140" fill="none" stroke="#6B46C1" stroke-width="2"/>
+  <path d="M70,180 Q90,170 70,160" fill="none" stroke="#6B46C1" stroke-width="2"/>
+  <path d="M70,200 Q90,190 70,180" fill="none" stroke="#6B46C1" stroke-width="2"/>
+  
+  <path d="M230,100 Q210,90 230,80" fill="none" stroke="#6B46C1" stroke-width="2"/>
+  <path d="M230,120 Q210,110 230,100" fill="none" stroke="#6B46C1" stroke-width="2"/>
+  <path d="M230,140 Q210,130 230,120" fill="none" stroke="#6B46C1" stroke-width="2"/>
+  <path d="M230,160 Q210,150 230,140" fill="none" stroke="#6B46C1" stroke-width="2"/>
+  <path d="M230,180 Q210,170 230,160" fill="none" stroke="#6B46C1" stroke-width="2"/>
+  <path d="M230,200 Q210,190 230,180" fill="none" stroke="#6B46C1" stroke-width="2"/>
+  
+  <!-- Stroke blockage -->
+  <circle cx="120" cy="140" r="15" fill="#E53E3E" opacity="0.8"/>
+  
+  <!-- Blood vessels -->
+  <path d="M60,150 C90,140 110,140 120,140" fill="none" stroke="#E53E3E" stroke-width="4"/>
+  <path d="M120,140 C140,140 160,150 180,160" fill="none" stroke="#EF4444" stroke-width="2" stroke-dasharray="2,2"/>
+  
+  <!-- Affected area -->
+  <path d="M120,140 C130,130 140,125 150,130 C160,135 165,145 160,160 C155,175 145,180 130,175 C115,170 110,155 120,140Z" 
+    fill="#FECACA" stroke="#E53E3E" stroke-width="1"/>
+  
+  <!-- Warning symbol -->
+  <circle cx="120" cy="140" r="25" fill="none" stroke="#E53E3E" stroke-width="2" stroke-dasharray="3,3"/>
+  <text x="215" y="70" font-family="Arial" font-size="12" fill="#E53E3E" font-weight="bold">BLOCKAGE</text>
+  <line x1="185" y1="75" x2="130" y2="130" stroke="#E53E3E" stroke-width="1" stroke-dasharray="2,2"/>
+</svg> 
