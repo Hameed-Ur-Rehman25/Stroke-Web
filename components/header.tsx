@@ -25,14 +25,6 @@ export default function Header() {
             FamCare24/7
           </Link>
         </div>
-        <div className="flex items-center gap-3">
-          <Button variant="outline" className="rounded-full border-indigo-300 text-indigo-700 hover:bg-indigo-50 hover:border-indigo-400 transition-all duration-300">
-            Sign Up
-          </Button>
-          <Button variant="outline" className="rounded-full border-purple-300 text-purple-700 hover:bg-purple-50 hover:border-purple-400 transition-all duration-300">
-            Log In
-          </Button>
-        </div>
       </header>
 
       <SidebarMenu isOpen={isSidebarOpen} onClose={() => setIsSidebarOpen(false)} />
