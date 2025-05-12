@@ -1,13 +1,72 @@
+"use client"
+
 import { AlertCircle, Heart, Activity } from 'lucide-react';
+import { useState } from 'react';
 
 export default function StrokeRiskAssessment() {
+  const [showAssessment, setShowAssessment] = useState(false);
+  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
+  const [answers, setAnswers] = useState<boolean[]>([]);
+  const [showResults, setShowResults] = useState(false);
+
+  const questions = [
+    "Are you over 55 years old?",
+    "Have you been diagnosed with high blood pressure?",
+    "Do you have diabetes?",
+    "Do you currently smoke?",
+    "Have you been told your cholesterol is high?",
+    "Do you exercise regularly?",
+  ];
+
+  const handleStartAssessment = () => {
+    setShowAssessment(true);
+    setCurrentQuestionIndex(0);
+    setAnswers([]);
+    setShowResults(false);
+  };
+
+  const handleAnswer = (answer: boolean) => {
+    const newAnswers = [...answers, answer];
+    setAnswers(newAnswers);
+
+    if (currentQuestionIndex < questions.length - 1) {
+      setCurrentQuestionIndex(currentQuestionIndex + 1);
+    } else {
+      setShowResults(true);
+    }
+  };
+
+  const calculateScore = () => {
+    // Count "Yes" answers (true), except for exercise which is a protective factor
+    // For exercise, count "No" as a risk point
+    return answers.reduce((score, answer, index) => {
+      if (index === 5) { // Exercise question
+        return score + (answer ? 0 : 1); // No exercise (false) = +1 risk
+      }
+      return score + (answer ? 1 : 0); // Yes for other questions = +1 risk
+    }, 0);
+  };
+
+  const getRiskLevel = (score: number) => {
+    if (score <= 2) return { level: "Low Risk", description: "Maintain a healthy lifestyle." };
+    if (score <= 4) return { level: "Moderate Risk", description: "Consider regular health check-ups and lifestyle adjustments." };
+    return { level: "High Risk", description: "Consult a healthcare professional for a detailed stroke risk assessment and possible lifestyle changes." };
+  };
+
+  const resetAssessment = () => {
+    setShowAssessment(false);
+    setShowResults(false);
+    setAnswers([]);
+    setCurrentQuestionIndex(0);
+  };
+
+  const score = calculateScore();
+  const riskLevel = getRiskLevel(score);
+
   return (
     <section className="mb-12">
-      <h2 className="text-2xl font-semibold mb-6 text-gray-800">Stroke Risk Assessment</h2>
-      <p className="text-gray-700 mb-6">
-        Understanding your personal risk factors is key to preventing stroke. Below are common risk factors and their associated risk percentages:
-      </p>
-      
+      {!showAssessment && (
+        <>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
         <div className="bg-white p-5 rounded-lg shadow-sm border border-gray-100">
           <div className="flex items-center gap-3 mb-4">
@@ -101,13 +160,140 @@ export default function StrokeRiskAssessment() {
       <div className="bg-gradient-to-r from-indigo-600 to-purple-600 rounded-lg p-6 text-white">
         <h3 className="text-xl font-bold mb-3">Take Our Stroke Risk Assessment</h3>
         <p className="mb-4">Answer a few questions to get a personalized stroke risk profile and recommendations.</p>
-        <a 
-          href="#"
+            <button 
+              onClick={handleStartAssessment}
           className="inline-block bg-white text-indigo-600 font-medium px-6 py-3 rounded-full hover:bg-indigo-50 transition duration-300"
         >
           Start Assessment
-        </a>
+            </button>
+          </div>
+        </>
+      )}
+
+      {showAssessment && !showResults && (
+        <div className="bg-white p-6 rounded-lg shadow-md border border-indigo-100 mb-6">
+          <div className="flex justify-between items-center mb-6">
+            <h3 className="text-2xl font-bold text-indigo-700">Stroke Risk Assessment</h3>
+            <span className="bg-indigo-100 text-indigo-700 px-3 py-1 rounded-full text-sm font-medium">
+              Question {currentQuestionIndex + 1} of {questions.length}
+            </span>
+          </div>
+          
+          <div className="mb-8">
+            <h4 className="text-xl font-medium text-gray-800 mb-6">{questions[currentQuestionIndex]}</h4>
+            
+            <div className="flex gap-4">
+              <button
+                onClick={() => handleAnswer(true)}
+                className="flex-1 bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-4 rounded-lg font-medium transition-colors"
+              >
+                Yes
+              </button>
+              <button
+                onClick={() => handleAnswer(false)}
+                className="flex-1 bg-gray-200 hover:bg-gray-300 text-gray-800 px-6 py-4 rounded-lg font-medium transition-colors"
+              >
+                No
+              </button>
+            </div>
+          </div>
+          
+          <div className="flex justify-between items-center">
+            <button
+              onClick={resetAssessment}
+              className="text-gray-600 hover:text-gray-900 underline text-sm"
+            >
+              Cancel
+            </button>
+            <div className="flex items-center gap-1">
+              {Array.from({ length: questions.length }).map((_, index) => (
+                <div 
+                  key={index} 
+                  className={`h-2 w-2 rounded-full ${index < currentQuestionIndex ? 'bg-indigo-600' : 'bg-gray-300'}`}
+                ></div>
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
+
+      {showResults && (
+        <div className="bg-white p-6 rounded-lg shadow-md border border-indigo-100 mb-6 relative overflow-hidden">
+          <div className={`absolute top-0 left-0 w-full h-1 ${
+            score <= 2 ? 'bg-green-500' : score <= 4 ? 'bg-yellow-500' : 'bg-red-500'
+          }`}></div>
+          
+          <h3 className="text-2xl font-bold text-indigo-700 mb-6">Your Stroke Risk Assessment Results</h3>
+          
+          <div className="flex items-center gap-3 mb-6">
+            <div className={`p-4 rounded-full ${
+              score <= 2 ? 'bg-green-100 text-green-600' : 
+              score <= 4 ? 'bg-yellow-100 text-yellow-600' : 
+              'bg-red-100 text-red-600'
+            }`}>
+              {score <= 2 ? (
+                <Heart className="h-8 w-8" />
+              ) : score <= 4 ? (
+                <AlertCircle className="h-8 w-8" />
+              ) : (
+                <Activity className="h-8 w-8" />
+              )}
+            </div>
+            <div>
+              <h4 className={`text-xl font-bold ${
+                score <= 2 ? 'text-green-600' : 
+                score <= 4 ? 'text-yellow-600' : 
+                'text-red-600'
+              }`}>
+                {riskLevel.level}
+              </h4>
+              <p className="text-gray-600">Score: {score} out of 6</p>
+            </div>
+          </div>
+          
+          <div className="mb-6">
+            <h5 className="font-medium text-gray-800 mb-2">Recommendation:</h5>
+            <p className="text-gray-700">{riskLevel.description}</p>
+          </div>
+          
+          <div className="mb-8">
+            <h5 className="font-medium text-gray-800 mb-3">Your Risk Factors:</h5>
+            <ul className="space-y-2">
+              {answers.map((answer, index) => {
+                // For all questions except exercise, "Yes" is a risk
+                // For exercise question, "No" is a risk
+                const isRiskFactor = (index === 5) ? !answer : answer;
+                
+                if (isRiskFactor) {
+                  return (
+                    <li key={index} className="flex items-center gap-2">
+                      <span className="text-red-500">•</span>
+                      <span className="text-gray-700">
+                        {index === 0 && "Age over 55"}
+                        {index === 1 && "High blood pressure"}
+                        {index === 2 && "Diabetes"}
+                        {index === 3 && "Smoking"}
+                        {index === 4 && "High cholesterol"}
+                        {index === 5 && "Lack of regular exercise"}
+                      </span>
+                    </li>
+                  );
+                }
+                return null;
+              }).filter(Boolean)}
+            </ul>
+          </div>
+          
+          <div className="flex justify-center">
+            <button
+              onClick={resetAssessment}
+              className="bg-indigo-600 hover:bg-indigo-700 text-white px-8 py-3 rounded-full font-medium transition-colors"
+            >
+              Return to Information
+            </button>
+          </div>
       </div>
+      )}
     </section>
   );
 }

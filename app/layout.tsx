@@ -9,9 +9,9 @@ import ChatInput from "@/components/chat-input"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "StrokeAI - Your Stroke Health Assistant",
-  description: "AI-powered stroke health assistant for personalized medical advice",
-    generator: 'v0.dev'
+  title: "FamCare24/7 - Your Stroke Caregiving Assistant",
+  description: "Supporting family caregivers of stroke patients with 24/7 resources and guidance",
+  generator: 'v0.dev'
 }
 
 export default function RootLayout({

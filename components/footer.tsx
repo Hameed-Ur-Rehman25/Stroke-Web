@@ -7,8 +7,8 @@ export default function Footer() {
       <div className="max-w-6xl mx-auto">
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-4">
           <div className="flex flex-col gap-1">
-            <h3 className="font-bold text-lg bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-purple-600">StrokeAI</h3>
-            <p className="text-sm text-gray-600">The future of stroke health assistance</p>
+            <h3 className="font-bold text-lg bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-purple-600">FamCare24/7</h3>
+            <p className="text-sm text-gray-600">Supporting stroke caregivers 24/7</p>
           </div>
           
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
@@ -46,7 +46,7 @@ export default function Footer() {
         </div>
         
         <div className="border-t border-indigo-100 pt-4 flex flex-col md:flex-row md:justify-between md:items-center gap-2">
-          <div className="text-sm text-gray-600">© 2025 StrokeAI.ai All Rights Reserved.</div>
+          <div className="text-sm text-gray-600">© 2025 FamCare24/7 All Rights Reserved.</div>
           
           <div className="flex gap-4">
             <a href="#" className="text-indigo-600 hover:text-indigo-800 transition-colors">

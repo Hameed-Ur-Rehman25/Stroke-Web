@@ -177,7 +177,7 @@ export default function StrokeInfoPage() {
           <h3 className="text-xl font-bold mb-3">Hospital Locator</h3>
           <p className="mb-4">Find the nearest stroke-ready hospital in your area for emergency care.</p>
           <a 
-            href="https://www.mystrokehospital.com/"
+            href="https://patient.boehringer-ingelheim.com/my/my-stroke-hospital/locate"
             target="_blank" 
             rel="noopener noreferrer"
             className="inline-block bg-white text-blue-600 font-medium px-6 py-3 rounded-full hover:bg-blue-50 transition duration-300"
