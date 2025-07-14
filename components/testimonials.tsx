@@ -61,29 +61,30 @@ export default function Testimonials() {
   }
 
   return (
-    <section className="px-6 max-w-6xl mx-auto py-16">
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7 }}
-        viewport={{ once: true, margin: "-100px" }}
-        className="text-center"
-      >
-        <h2 className="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-purple-600 mb-4">What our users say</h2>
-        <p className="text-xl text-gray-600 mb-12">
-          Discover why thousands trust StrokeAI.ai for their health needs.
-        </p>
-      </motion.div>
+    <section className="px-6 py-16 bg-purple-50">
+      <div className="max-w-6xl mx-auto">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7 }}
+          viewport={{ once: true, margin: "-100px" }}
+          className="text-center"
+        >
+          <h2 className="text-4xl font-bold text-slate-800 mb-4">What our users say</h2>
+          <p className="text-xl text-slate-600 mb-12">
+            Discover why thousands trust StrokeAI.ai for their health needs.
+          </p>
+        </motion.div>
 
       <div className="relative">
         <motion.button
           onClick={prevSlide}
-          className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white hover:bg-indigo-50 rounded-full p-3 shadow-md transition-all"
+          className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white hover:bg-purple-100 rounded-full p-3 shadow-md transition-all"
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.95 }}
           aria-label="Previous testimonial"
         >
-          <ChevronLeft className="h-6 w-6 text-indigo-600" />
+          <ChevronLeft className="h-6 w-6 text-purple-500" />
         </motion.button>
 
         <div className="overflow-hidden px-14">
@@ -96,51 +97,49 @@ export default function Testimonials() {
               transition={{ duration: 0.5, ease: "easeInOut" }}
               className="grid md:grid-cols-1 gap-6"
             >
-              <div className="bg-gradient-to-r from-indigo-50 to-purple-50 rounded-2xl p-1 shadow-lg">
-                <div className="bg-white rounded-xl p-8">
-                  <div className="flex items-start gap-4 mb-6">
-                    <div className="relative">
-                      <div className="w-16 h-16 rounded-full bg-gradient-to-r from-indigo-200 to-purple-200 flex items-center justify-center overflow-hidden">
-                        {testimonials[currentSlide].avatar ? (
-                          <img 
-                            src={testimonials[currentSlide].avatar} 
-                            alt={testimonials[currentSlide].name}
-                            className="w-full h-full object-cover"
-                            onError={(e) => {
-                              e.currentTarget.src = "/placeholder-user.jpg";
-                            }}
-                          />
-                        ) : (
-                          <span className="text-2xl font-bold text-indigo-700">
-                            {testimonials[currentSlide].name.charAt(0)}
-                          </span>
-                        )}
-                      </div>
-                      <div className="absolute -bottom-1 -right-1 bg-indigo-500 rounded-full p-1 border-2 border-white">
-                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <path d="M5 13L9 17L19 7" stroke="white" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
-                        </svg>
-                      </div>
+              <div className="bg-white rounded-2xl p-8 shadow-lg">
+                <div className="flex items-start gap-4 mb-6">
+                  <div className="relative">
+                    <div className="w-16 h-16 rounded-full bg-purple-200 flex items-center justify-center overflow-hidden">
+                      {testimonials[currentSlide].avatar ? (
+                        <img 
+                          src={testimonials[currentSlide].avatar} 
+                          alt={testimonials[currentSlide].name}
+                          className="w-full h-full object-cover"
+                          onError={(e) => {
+                            e.currentTarget.src = "/placeholder-user.jpg";
+                          }}
+                        />
+                      ) : (
+                        <span className="text-2xl font-bold text-purple-500">
+                          {testimonials[currentSlide].name.charAt(0)}
+                        </span>
+                      )}
                     </div>
-                    <div>
-                      <h3 className="text-xl font-bold text-gray-800">{testimonials[currentSlide].name}</h3>
-                      <p className={`${testimonials[currentSlide].titleColor} font-medium`}>{testimonials[currentSlide].title}</p>
+                    <div className="absolute -bottom-1 -right-1 bg-purple-500 rounded-full p-1 border-2 border-white">
+                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M5 13L9 17L19 7" stroke="white" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
+                      </svg>
                     </div>
                   </div>
-                  
-                  <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ delay: 0.2, duration: 0.5 }}
-                  >
-                    <div className="relative">
-                      <svg className="absolute -top-4 -left-4 h-8 w-8 text-indigo-200" fill="currentColor" viewBox="0 0 32 32">
-                        <path d="M9.352 4C4.456 7.456 1 13.12 1 19.36c0 5.088 3.072 8.064 6.624 8.064 3.36 0 5.856-2.688 5.856-5.856 0-3.168-2.208-5.472-5.088-5.472-.576 0-1.344.096-1.536.192.48-3.264 3.552-7.104 6.624-9.024L9.352 4zm16.512 0c-4.8 3.456-8.256 9.12-8.256 15.36 0 5.088 3.072 8.064 6.624 8.064 3.264 0 5.856-2.688 5.856-5.856 0-3.168-2.304-5.472-5.184-5.472-.576 0-1.248.096-1.44.192.48-3.264 3.456-7.104 6.528-9.024L25.864 4z" />
-                      </svg>
-                      <p className="text-lg text-gray-700 pl-2 leading-relaxed">{testimonials[currentSlide].testimonial}</p>
-                    </div>
-                  </motion.div>
+                  <div>
+                    <h3 className="text-xl font-bold text-slate-800">{testimonials[currentSlide].name}</h3>
+                    <p className="text-sm text-purple-500 font-medium">{testimonials[currentSlide].title}</p>
+                  </div>
                 </div>
+                
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 0.2, duration: 0.5 }}
+                >
+                  <div className="relative">
+                    <svg className="absolute -top-4 -left-4 h-8 w-8 text-purple-200" fill="currentColor" viewBox="0 0 32 32">
+                      <path d="M9.352 4C4.456 7.456 1 13.12 1 19.36c0 5.088 3.072 8.064 6.624 8.064 3.36 0 5.856-2.688 5.856-5.856 0-3.168-2.208-5.472-5.088-5.472-.576 0-1.344.096-1.536.192.48-3.264 3.552-7.104 6.624-9.024L9.352 4zm16.512 0c-4.8 3.456-8.256 9.12-8.256 15.36 0 5.088 3.072 8.064 6.624 8.064 3.264 0 5.856-2.688 5.856-5.856 0-3.168-2.304-5.472-5.184-5.472-.576 0-1.248.096-1.44.192.48-3.264 3.456-7.104 6.528-9.024L25.864 4z" />
+                    </svg>
+                    <p className="text-lg text-slate-600 pl-2 leading-relaxed">{testimonials[currentSlide].testimonial}</p>
+                  </div>
+                </motion.div>
               </div>
             </motion.div>
           </AnimatePresence>
@@ -148,12 +147,12 @@ export default function Testimonials() {
 
         <motion.button
           onClick={nextSlide}
-          className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white hover:bg-indigo-50 rounded-full p-3 shadow-md transition-all"
+          className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white hover:bg-purple-100 rounded-full p-3 shadow-md transition-all"
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.95 }}
           aria-label="Next testimonial"
         >
-          <ChevronRight className="h-6 w-6 text-indigo-600" />
+          <ChevronRight className="h-6 w-6 text-purple-500" />
         </motion.button>
       </div>
 
@@ -162,12 +161,13 @@ export default function Testimonials() {
           <motion.button
             key={index}
             onClick={() => goToSlide(index)}
-            className={`h-3 w-3 rounded-full transition-all ${index === currentSlide ? 'bg-gradient-to-r from-indigo-500 to-purple-500 scale-125' : 'bg-gray-300'}`}
+            className={`h-3 w-3 rounded-full transition-all ${index === currentSlide ? 'bg-purple-500 scale-125' : 'bg-gray-300'}`}
             whileHover={{ scale: 1.2 }}
             whileTap={{ scale: 0.9 }}
             aria-label={`Go to testimonial ${index + 1}`}
           />
         ))}
+      </div>
       </div>
     </section>
   )

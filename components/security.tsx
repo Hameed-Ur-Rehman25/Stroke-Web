@@ -2,7 +2,7 @@ import { Lock, Shield } from "lucide-react"
 
 export default function Security() {
   return (
-    <section className="px-6 max-w-6xl mx-auto">
+    <section className="px-6 max-w-6xl mx-auto py-16">
       <div className="bg-gray-800 rounded-lg p-12 text-center">
         <div className="flex justify-center mb-6">
           <div className="bg-gray-700 p-4 rounded-full">

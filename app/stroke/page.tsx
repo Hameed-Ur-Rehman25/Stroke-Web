@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 export default function StrokeInfoPage() {
   return (
     <div className="container mx-auto px-4 py-12 max-w-4xl">
-      <h1 className="text-3xl md:text-4xl font-bold mb-8 text-center bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-purple-600">
+      <h1 className="text-5xl font-extrabold text-purple-700 text-center my-10 bg-purple-50 px-8 py-4 rounded-lg shadow">
         What is Stroke?
       </h1>
       
@@ -121,32 +121,32 @@ export default function StrokeInfoPage() {
         </div>
       </section>
 
-      <section className="mb-10 bg-gradient-to-r from-indigo-50 to-purple-50 p-6 rounded-lg">
+      <section className="mb-10 bg-gray-50 p-6 rounded-lg">
         <h2 className="text-2xl font-semibold mb-6 text-gray-800">Burden of Stroke in Malaysia</h2>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div className="bg-white p-6 rounded-lg shadow-sm">
-            <h3 className="text-xl font-medium mb-2 text-indigo-700">Daily Stroke Admissions</h3>
-            <p className="text-3xl font-bold text-gray-800 mb-1">110-120<span className="text-lg text-gray-600">/day</span></p>
+          <div className="bg-white p-6 rounded-lg shadow-sm border-t-4 border-purple-500">
+            <h3 className="text-xl font-medium mb-2 text-purple-500">Daily Stroke Admissions</h3>
+            <p className="text-3xl font-bold text-purple-500 mb-1">110-120<span className="text-lg text-gray-600">/day</span></p>
             <p className="text-sm text-gray-600">Stroke admissions (2022-2023)</p>
             <p className="text-xs text-gray-500 mt-2">Reference: National Stroke Registry of Malaysia Annual Report 2023; Ministry of Health Malaysia Health Facts 2023</p>
           </div>
           
-          <div className="bg-white p-6 rounded-lg shadow-sm">
-            <h3 className="text-xl font-medium mb-2 text-indigo-700">Age Distribution</h3>
-            <p className="text-3xl font-bold text-gray-800 mb-1">42%<span className="text-lg text-gray-600"> Below 60 years old</span></p>
+          <div className="bg-white p-6 rounded-lg shadow-sm border-t-4 border-teal-500">
+            <h3 className="text-xl font-medium mb-2 text-teal-500">Age Distribution</h3>
+            <p className="text-3xl font-bold text-teal-500 mb-1">42%<span className="text-lg text-gray-600"> Below 60 years old</span></p>
             <p className="text-xs text-gray-500 mt-2">Reference: Aziz ZA, et al. (2022). "Changing demographics of stroke in Malaysia: Analysis from the Malaysian Stroke Registry." International Journal of Stroke, 17(5):556-563</p>
           </div>
           
-          <div className="bg-white p-6 rounded-lg shadow-sm">
-            <h3 className="text-xl font-medium mb-2 text-indigo-700">Daily Mortality</h3>
-            <p className="text-3xl font-bold text-gray-800 mb-1">35-38<span className="text-lg text-gray-600"> Deaths per day</span></p>
+          <div className="bg-white p-6 rounded-lg shadow-sm border-t-4 border-slate-700">
+            <h3 className="text-xl font-medium mb-2 text-slate-700">Daily Mortality</h3>
+            <p className="text-3xl font-bold text-slate-700 mb-1">35-38<span className="text-lg text-gray-600"> Deaths per day</span></p>
             <p className="text-xs text-gray-500 mt-2">Reference: Department of Statistics Malaysia (DOSM) Mortality Statistics 2023; World Stroke Organization Malaysia Country Report 2023</p>
           </div>
           
-          <div className="bg-white p-6 rounded-lg shadow-sm">
-            <h3 className="text-xl font-medium mb-2 text-indigo-700">Economic Burden</h3>
-            <p className="text-3xl font-bold text-gray-800 mb-1">RM 290-320 Million</p>
+          <div className="bg-white p-6 rounded-lg shadow-sm border-t-4 border-lime-600">
+            <h3 className="text-xl font-medium mb-2 text-lime-600">Economic Burden</h3>
+            <p className="text-3xl font-bold text-lime-600 mb-1">RM 290-320 Million</p>
             <p className="text-sm text-gray-600">Annual cost of stroke management for approximately 40,000-43,000 admissions per year</p>
             <p className="text-xs text-gray-500 mt-2">Reference: Abdul Aziz AF, et al. (2023). "Economic burden of stroke care in Malaysia: A cost-of-illness study." Neuroepidemiology, 41(3):174-182; Malaysian Society of Neurosciences Economic Impact Report 2022</p>
           </div>
@@ -173,14 +173,14 @@ export default function StrokeInfoPage() {
         <p className="text-gray-700 mb-6">
           When a stroke occurs, quick access to medical care is crucial. Find the nearest stroke-ready hospital to ensure rapid treatment.
         </p>
-        <div className="bg-gradient-to-r from-cyan-500 to-blue-500 rounded-lg p-6 text-white">
-          <h3 className="text-xl font-bold mb-3">Hospital Locator</h3>
-          <p className="mb-4">Find the nearest stroke-ready hospital in your area for emergency care.</p>
+        <div className="bg-slate-800 rounded-lg p-6 text-white shadow-lg border border-slate-600">
+          <h3 className="text-xl font-bold mb-3 text-white">Hospital Locator</h3>
+          <p className="mb-4 text-slate-300">Find the nearest stroke-ready hospital in your area for emergency care.</p>
           <a 
             href="https://patient.boehringer-ingelheim.com/my/my-stroke-hospital/locate"
             target="_blank" 
             rel="noopener noreferrer"
-            className="inline-block bg-white text-blue-600 font-medium px-6 py-3 rounded-full hover:bg-blue-50 transition duration-300"
+            className="inline-block bg-blue-600 text-white font-medium px-6 py-3 rounded-full hover:bg-blue-700 transition duration-300"
           >
             Find Now
           </a>

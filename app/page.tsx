@@ -7,7 +7,7 @@ import Security from "@/components/security"
 
 export default function Home() {
   return (
-    <div className="flex flex-col gap-16 pb-16">
+    <div className="flex flex-col">
       <Hero />
       <Features />
       <ChatExample />

@@ -11,12 +11,30 @@ export default function StrokeRiskAssessment() {
   const [showResults, setShowResults] = useState(false);
 
   const questions = [
-    "Are you over 55 years old?",
-    "Have you been diagnosed with high blood pressure?",
-    "Do you have diabetes?",
-    "Do you currently smoke?",
-    "Have you been told your cholesterol is high?",
-    "Do you exercise regularly?",
+    {
+      question: "Are you over 55 years old?",
+      explanation: "Age is a significant risk factor for stroke. As people age, the risk of stroke increases, especially after 55 years old."
+    },
+    {
+      question: "Have you been diagnosed with high blood pressure?",
+      explanation: "High blood pressure (hypertension) is defined as a consistent reading of 140/90 mmHg or higher. Uncontrolled high blood pressure can damage blood vessels, increasing the likelihood of a stroke."
+    },
+    {
+      question: "Do you have diabetes?",
+      explanation: "Diabetes is a condition where blood sugar levels are persistently above 126 mg/dL (fasting) or above 200 mg/dL (random). Poorly managed diabetes can lead to blood vessel damage and stroke risk."
+    },
+    {
+      question: "Do you currently smoke?",
+      explanation: "Smoking is defined as smoking at least one cigarette daily. Smoking narrows blood vessels and thickens blood, increasing the risk of clots and stroke."
+    },
+    {
+      question: "Have you been told your cholesterol is high?",
+      explanation: "High cholesterol is typically defined as total cholesterol levels above 200 mg/dL or LDL (bad cholesterol) above 100 mg/dL. High cholesterol can lead to fatty deposits in blood vessels, which can restrict blood flow and trigger strokes."
+    },
+    {
+      question: "Do you exercise regularly?",
+      explanation: "Regular physical activity is defined as at least 150 minutes of moderate-intensity exercise per week (e.g., brisk walking) or 75 minutes of vigorous activity (e.g., running)."
+    },
   ];
 
   const handleStartAssessment = () => {
@@ -245,17 +263,20 @@ export default function StrokeRiskAssessment() {
       </motion.div>
       
       <motion.div 
-        className="bg-gradient-to-r from-indigo-600 to-purple-600 rounded-lg p-6 text-white"
+        className="bg-slate-800 rounded-lg p-6 text-white shadow-lg border border-slate-600"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.4 }}
         whileHover={{ scale: 1.01 }}
       >
-        <h3 className="text-xl font-bold mb-3">Take Our Stroke Risk Assessment</h3>
-        <p className="mb-4">Answer a few questions to get a personalized stroke risk profile and recommendations.</p>
+        <h3 className="text-xl font-bold mb-3 text-white">Take Our Stroke Risk Assessment</h3>
+        <p className="mb-2 text-slate-300 text-sm">
+          This stroke risk assessment tool is adapted from the validated Framingham Stroke Risk Profile (FSRP) and provides a simplified approach for public use.
+        </p>
+        <p className="mb-2 text-slate-200 font-medium">Answer the following questions to assess your risk of stroke</p>
         <motion.button 
           onClick={handleStartAssessment}
-          className="inline-block bg-white text-indigo-600 font-medium px-6 py-3 rounded-full hover:bg-indigo-50 transition duration-300"
+          className="inline-block bg-blue-600 text-white font-medium px-6 py-3 rounded-full hover:bg-blue-700 transition duration-300"
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
         >
@@ -273,10 +294,9 @@ export default function StrokeRiskAssessment() {
               Question {currentQuestionIndex + 1} of {questions.length}
             </span>
           </div>
-          
           <div className="mb-8">
-            <h4 className="text-xl font-medium text-gray-800 mb-6">{questions[currentQuestionIndex]}</h4>
-            
+            <h4 className="text-xl font-medium text-gray-800 mb-2">{questions[currentQuestionIndex].question}</h4>
+            <p className="text-gray-600 mb-4 text-sm">{questions[currentQuestionIndex].explanation}</p>
             <div className="flex gap-4">
               <button
                 onClick={() => handleAnswer(true)}
@@ -313,17 +333,15 @@ export default function StrokeRiskAssessment() {
       )}
 
       {showResults && (
-        <div className="bg-white p-6 rounded-lg shadow-md border border-indigo-100 mb-6 relative overflow-hidden">
+        <div className="bg-white p-6 rounded-lg shadow-md border border-slate-200 mb-6 relative overflow-hidden">
           <div className={`absolute top-0 left-0 w-full h-1 ${
-            score <= 2 ? 'bg-green-500' : score <= 4 ? 'bg-yellow-500' : 'bg-red-500'
+            score <= 2 ? 'bg-emerald-500' : score <= 4 ? 'bg-amber-500' : 'bg-red-500'
           }`}></div>
-          
-          <h3 className="text-2xl font-bold text-indigo-700 mb-6">Your Stroke Risk Assessment Results</h3>
-          
+          <h3 className="text-2xl font-bold text-slate-800 mb-6">Your Stroke Risk Assessment Results</h3>
           <div className="flex items-center gap-3 mb-6">
             <div className={`p-4 rounded-full ${
-              score <= 2 ? 'bg-green-100 text-green-600' : 
-              score <= 4 ? 'bg-yellow-100 text-yellow-600' : 
+              score <= 2 ? 'bg-emerald-100 text-emerald-600' : 
+              score <= 4 ? 'bg-amber-100 text-amber-600' : 
               'bg-red-100 text-red-600'
             }`}>
               {score <= 2 ? (
@@ -336,29 +354,23 @@ export default function StrokeRiskAssessment() {
             </div>
             <div>
               <h4 className={`text-xl font-bold ${
-                score <= 2 ? 'text-green-600' : 
-                score <= 4 ? 'text-yellow-600' : 
+                score <= 2 ? 'text-emerald-600' : 
+                score <= 4 ? 'text-amber-600' : 
                 'text-red-600'
               }`}>
-                {riskLevel.level}
+                {score <= 2 ? 'Low Risk' : score <= 4 ? 'Moderate Risk' : 'High Risk'}
               </h4>
               <p className="text-gray-600">Score: {score} out of 6</p>
             </div>
           </div>
-          
+          {/* User's selected risk factors */}
           <div className="mb-6">
-            <h5 className="font-medium text-gray-800 mb-2">Recommendation:</h5>
-            <p className="text-gray-700">{riskLevel.description}</p>
-          </div>
-          
-          <div className="mb-8">
-            <h5 className="font-medium text-gray-800 mb-3">Your Risk Factors:</h5>
+            <h5 className="font-medium text-gray-800 mb-2">Your Risk Factors:</h5>
             <ul className="space-y-2">
               {answers.map((answer, index) => {
                 // For all questions except exercise, "Yes" is a risk
                 // For exercise question, "No" is a risk
                 const isRiskFactor = (index === 5) ? !answer : answer;
-                
                 if (isRiskFactor) {
                   return (
                     <li key={index} className="flex items-center gap-2">
@@ -378,16 +390,27 @@ export default function StrokeRiskAssessment() {
               }).filter(Boolean)}
             </ul>
           </div>
-          
-          <div className="flex justify-center">
-            <button
-              onClick={resetAssessment}
-              className="bg-indigo-600 hover:bg-indigo-700 text-white px-8 py-3 rounded-full font-medium transition-colors"
-            >
-              Return to Information
-            </button>
+          <div className="mb-6">
+            <h5 className="font-medium text-gray-800 mb-2">Scoring:</h5>
+            <p className="text-gray-700 mb-2">- For each "Yes" answer, give yourself 1 point</p>
+            <h5 className="font-medium text-gray-800 mb-2">Risk Levels:</h5>
+            <ul className="text-gray-700 mb-2 list-disc list-inside">
+              <li>0-2 points: Low Risk</li>
+              <li>3-4 points: Moderate Risk</li>
+              <li>5-6 points: High Risk</li>
+            </ul>
+            <h5 className="font-medium text-gray-800 mb-2">Recommendations:</h5>
+            <ul className="text-gray-700 mb-2 list-disc list-inside">
+              <li>Low Risk: Maintain a healthy lifestyle.</li>
+              <li>Moderate Risk: Consider regular health check-ups and lifestyle adjustments.</li>
+              <li>High Risk: Consult a healthcare professional for a more detailed stroke risk assessment and possible lifestyle changes.</li>
+            </ul>
           </div>
-      </div>
+          <div className="mb-2">
+            <h5 className="font-medium text-gray-800 mb-2">Note:</h5>
+            <p className="text-gray-600 text-sm">This tool is adapted from the validated Framingham Stroke Risk Profile (FSRP) and provides a general stroke risk estimate. It should not replace professional medical advice.</p>
+          </div>
+        </div>
       )}
     </section>
   );

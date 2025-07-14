@@ -15,7 +15,7 @@ export default function Header() {
 
   return (
     <>
-      <header className="py-4 px-6 flex items-center justify-between bg-gradient-to-r from-indigo-50 via-white to-purple-50 shadow-sm sticky top-0 z-50">
+      <header className="py-4 px-6 flex items-center justify-between bg-white shadow-sm sticky top-0 z-50 border-b border-slate-200">
         <div className="flex items-center gap-4">
           <Button variant="ghost" size="icon" className="bg-gradient-to-r from-indigo-100 to-purple-100 rounded-md h-10 w-10 hover:from-indigo-200 hover:to-purple-200 transition-all duration-300" onClick={toggleSidebar}>
             <Menu className="h-5 w-5 text-indigo-700" />
