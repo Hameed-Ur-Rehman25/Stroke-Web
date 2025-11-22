@@ -3,46 +3,48 @@
 import { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { ChevronDown } from "lucide-react"
+import { useLanguage } from "@/contexts/language-context"
 
 export default function FAQ() {
+  const { t } = useLanguage()
   const [openIndex, setOpenIndex] = useState<number | null>(0)
 
   const faqs = [
     {
-      question: "Is my data secure?",
-      answer: "Yes. Your information stays on your device and inside WhatsApp's end-to-end encrypted chat. No accounts. No tracking. No data stored on our servers."
+      question: t("faqDataSecure"),
+      answer: t("faqDataSecureAns")
     },
     {
-      question: "Does FamCare247 replace my doctor?",
-      answer: "No. FamCare247 provides guidance, education, and support – but it does not diagnose or replace medical professionals. Always follow your doctor's medical advice."
+      question: t("faqReplaceDoctor"),
+      answer: t("faqReplaceDoctorAns")
     },
     {
-      question: "Do I need internet to use FamCare247?",
-      answer: "Yes. Because FamCare247 runs on WhatsApp, an internet connection is required to chat and receive support."
+      question: t("faqNeedInternet"),
+      answer: t("faqNeedInternetAns")
     },
     {
-      question: "Is FamCare247 free to use?",
-      answer: "Yes. The WhatsApp support is free to use. (Optional advanced features may be added later.)"
+      question: t("faqFree"),
+      answer: t("faqFreeAns")
     },
     {
-      question: "Which languages are supported?",
-      answer: "Currently available in:\n• English\n• Bahasa Melayu\n(More languages coming soon.)"
+      question: t("faqLanguages"),
+      answer: t("faqLanguagesAns")
     },
     {
-      question: "Can I trust the medical information?",
-      answer: "Yes. All content is reviewed and adapted from credible, medically recognised stroke guidelines and clinical best practices."
+      question: t("faqTrustInfo"),
+      answer: t("faqTrustInfoAns")
     },
     {
-      question: "Can I ask questions anytime?",
-      answer: "Yes. The AI assistant is available 24 hours a day, every day."
+      question: t("faqAskAnytime"),
+      answer: t("faqAskAnytimeAns")
     },
     {
-      question: "Can it help in emergencies?",
-      answer: "Yes – FamCare247 provides BEFAST steps and tells you what to do immediately, including helping you locate the nearest stroke-ready hospitals. But always call 999 if someone shows emergency symptoms."
+      question: t("faqEmergencies"),
+      answer: t("faqEmergenciesAns")
     },
     {
-      question: "Who is FamCare247 made for?",
-      answer: "• Family caregivers\n• Stroke survivors\n• Nurses & therapists\n• Anyone who wants fast, reliable stroke guidance"
+      question: t("faqMadeFor"),
+      answer: t("faqMadeForAns")
     }
   ]
 
@@ -61,10 +63,10 @@ export default function FAQ() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
-            Frequently Asked Questions
+            {t("frequentlyAsked")}
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Everything you need to know about using FamCare247 – your 24/7 WhatsApp Stroke Care Companion.
+            {t("faqSubtitle")}
           </p>
         </motion.div>
 
@@ -129,17 +131,17 @@ export default function FAQ() {
         >
           <div className="bg-gradient-to-r from-purple-500 to-indigo-600 rounded-2xl p-8 text-white">
             <h3 className="text-2xl font-bold mb-4">
-              Still have questions?
+              {t("stillHaveQuestions")}
             </h3>
             <p className="text-lg mb-6 opacity-90">
-              Our team is here to help. Reach out anytime.
+              {t("teamHere")}
             </p>
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="bg-white text-purple-600 font-semibold px-8 py-3 rounded-xl shadow-lg hover:shadow-xl transition-all"
             >
-              Contact Support
+              {t("contactSupport")}
             </motion.button>
           </div>
         </motion.div>

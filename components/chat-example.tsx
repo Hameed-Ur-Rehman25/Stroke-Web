@@ -2,7 +2,7 @@ export default function ChatExample() {
   return (
     <section className="px-6 py-16" style={{ backgroundColor: 'hsl(var(--chat-bg))' }}>
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-3xl font-bold text-white mb-6">Welcome to the FamCare24/7</h2>
+        <h2 className="text-3xl font-bold text-white mb-6">Welcome to the FamCare247</h2>
 
       <div className="bg-white rounded-xl p-6 shadow-lg border border-indigo-100">
         <div className="bg-gradient-to-br from-indigo-900 to-purple-900 rounded-xl p-8 relative overflow-hidden">

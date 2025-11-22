@@ -3,8 +3,11 @@
 import { Button } from "@/components/ui/button"
 import { motion } from "framer-motion"
 import StrokeRiskAssessment from './stroke-risk-assessment';
+import { useLanguage } from "@/contexts/language-context"
 
 export default function Community() {
+  const { t } = useLanguage()
+  
   return (
     <section id="stroke-risk-assessment" className="px-6 py-16" style={{ backgroundColor: 'hsl(var(--community-bg))' }}>
       <div className="max-w-6xl mx-auto">
@@ -14,8 +17,8 @@ export default function Community() {
           transition={{ duration: 0.7 }}
           viewport={{ once: true, margin: "-100px" }}
         >
-          <h2 className="text-4xl font-bold text-slate-800 mb-4">Are you at risk of stroke?</h2>
-          <p className="text-xl text-slate-600 mb-6">Answer a few short questions to find out.</p>
+          <h2 className="text-4xl font-bold text-slate-800 mb-4">{t("atRisk")}</h2>
+          <p className="text-xl text-slate-600 mb-6">{t("answerQuestions")}</p>
         </motion.div>
 
       <StrokeRiskAssessment />

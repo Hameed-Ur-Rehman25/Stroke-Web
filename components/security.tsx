@@ -1,26 +1,31 @@
 "use client"
 
+"use client"
+
 import { Lock, Shield, ShieldCheck } from "lucide-react"
 import { motion } from "framer-motion"
+import { useLanguage } from "@/contexts/language-context"
 
 export default function Security() {
+  const { t } = useLanguage()
+  
   const securityFeatures = [
     {
       icon: <Shield className="h-8 w-8" />,
-      title: "Secure",
-      description: "Your information stays encrypted on your device.",
+      title: t("secure"),
+      description: t("secureDesc"),
       color: "from-blue-500 to-blue-600"
     },
     {
       icon: <ShieldCheck className="h-8 w-8" />,
-      title: "Private by Design", 
-      description: "No accounts. No tracking. No selling of data.",
+      title: t("privateByDesign"), 
+      description: t("privateByDesignDesc"),
       color: "from-purple-500 to-purple-600"
     },
     {
       icon: <Lock className="h-8 w-8" />,
-      title: "Your Data. Safe.",
-      description: "Only you decide what gets shared.",
+      title: t("yourDataSafe"),
+      description: t("yourDataSafeDesc"),
       color: "from-green-500 to-green-600"
     }
   ]
@@ -42,10 +47,10 @@ export default function Security() {
           </div>
 
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            Privacy you can trust.
+            {t("privacyTrust")}
           </h2>
           <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-            Caring for a loved one is personal – and so is your data.
+            {t("caringPersonal")}
           </p>
         </motion.div>
 
@@ -93,9 +98,9 @@ export default function Security() {
                   <Shield className="h-6 w-6 text-blue-400" />
                 </div>
                 <div>
-                  <h4 className="text-lg font-semibold text-white mb-2">WhatsApp Encryption</h4>
+                  <h4 className="text-lg font-semibold text-white mb-2">{t("whatsappEncryption")}</h4>
                   <p className="text-gray-300">
-                    All conversations are protected by WhatsApp's end-to-end encryption, ensuring only you can read your messages.
+                    {t("whatsappEncryptionDesc")}
                   </p>
                 </div>
               </div>
@@ -105,9 +110,9 @@ export default function Security() {
                   <Lock className="h-6 w-6 text-green-400" />
                 </div>
                 <div>
-                  <h4 className="text-lg font-semibold text-white mb-2">No Data Storage</h4>
+                  <h4 className="text-lg font-semibold text-white mb-2">{t("noDataStorage")}</h4>
                   <p className="text-gray-300">
-                    We don't store your conversations or personal information on our servers. Your privacy remains fully under your control.
+                    {t("noDataStorageDesc")}
                   </p>
                 </div>
               </div>

@@ -1,8 +1,10 @@
 "use client"
 
 import Link from "next/link"
+import { useLanguage } from "@/contexts/language-context"
 
 export default function Footer() {
+  const { t } = useLanguage()
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id)
     if (element) {
@@ -19,21 +21,21 @@ export default function Footer() {
             <div className="mb-4">
               <h3 className="text-2xl font-bold text-white mb-2">FamCare247</h3>
               <p className="text-sm text-gray-400 leading-relaxed">
-                Empowering Malaysia's stroke caregivers with 24/7 support through WhatsApp.
+                {t("footerMission")}
               </p>
             </div>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-white font-semibold mb-4 text-sm uppercase tracking-wider">Quick Links</h4>
+            <h4 className="text-white font-semibold mb-4 text-sm uppercase tracking-wider">{t("quickLinks")}</h4>
             <ul className="space-y-3">
               <li>
                 <button
                   onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
                   className="text-sm text-gray-400 hover:text-white transition-colors text-left"
                 >
-                  Home
+                  {t("home")}
                 </button>
               </li>
               <li>
@@ -41,7 +43,7 @@ export default function Footer() {
                   onClick={() => scrollToSection('how-it-works')}
                   className="text-sm text-gray-400 hover:text-white transition-colors text-left"
                 >
-                  How It Works
+                  {t("howItWorksLink")}
                 </button>
               </li>
               <li>
@@ -49,7 +51,7 @@ export default function Footer() {
                   onClick={() => scrollToSection('stroke-risk-assessment')}
                   className="text-sm text-gray-400 hover:text-white transition-colors text-left"
                 >
-                  Stroke Risk Assessment
+                  {t("strokeRiskAssessmentLink")}
                 </button>
               </li>
               <li>
@@ -57,7 +59,7 @@ export default function Footer() {
                   onClick={() => scrollToSection('hospital-locator')}
                   className="text-sm text-gray-400 hover:text-white transition-colors text-left"
                 >
-                  Stroke Hospital Locator
+                  {t("strokeHospitalLocatorLink")}
                 </button>
               </li>
             </ul>
@@ -65,14 +67,14 @@ export default function Footer() {
 
           {/* Support */}
           <div>
-            <h4 className="text-white font-semibold mb-4 text-sm uppercase tracking-wider">Support</h4>
+            <h4 className="text-white font-semibold mb-4 text-sm uppercase tracking-wider">{t("support")}</h4>
             <ul className="space-y-3">
               <li>
                 <button
                   onClick={() => scrollToSection('faq')}
                   className="text-sm text-gray-400 hover:text-white transition-colors text-left"
                 >
-                  FAQ
+                  {t("faqLink")}
                 </button>
               </li>
               <li>
@@ -80,7 +82,7 @@ export default function Footer() {
                   href="mailto:hello@whitecoat.com.my"
                   className="text-sm text-gray-400 hover:text-white transition-colors"
                 >
-                  Contact Support
+                  {t("contactSupportLink")}
                 </a>
               </li>
             </ul>
@@ -88,21 +90,21 @@ export default function Footer() {
 
           {/* Legal Links */}
           <div>
-            <h4 className="text-white font-semibold mb-4 text-sm uppercase tracking-wider">Legal Links</h4>
+            <h4 className="text-white font-semibold mb-4 text-sm uppercase tracking-wider">{t("legalLinks")}</h4>
             <ul className="space-y-3">
               <li>
                 <Link href="/privacy-policy" className="text-sm text-gray-400 hover:text-white transition-colors">
-                  Privacy Policy
+                  {t("privacyPolicy")}
                 </Link>
               </li>
               <li>
                 <Link href="/terms-of-service" className="text-sm text-gray-400 hover:text-white transition-colors">
-                  Terms of Service
+                  {t("termsOfService")}
                 </Link>
               </li>
               <li>
                 <Link href="/medical-disclaimer" className="text-sm text-gray-400 hover:text-white transition-colors">
-                  Medical Disclaimer
+                  {t("medicalDisclaimer")}
                 </Link>
               </li>
             </ul>
@@ -112,7 +114,7 @@ export default function Footer() {
         {/* Bottom Copyright */}
         <div className="pt-8 border-t border-gray-800 text-center">
           <p className="text-sm text-gray-500">
-            © 2025 FamCare247. All rights reserved.
+            {t("copyright")}
           </p>
         </div>
       </div>

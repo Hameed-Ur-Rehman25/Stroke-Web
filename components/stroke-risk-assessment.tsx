@@ -3,8 +3,10 @@
 import { AlertCircle, Heart, Activity } from 'lucide-react';
 import { useState } from 'react';
 import { motion } from 'framer-motion';
+import { useLanguage } from '@/contexts/language-context';
 
 export default function StrokeRiskAssessment() {
+  const { t } = useLanguage()
   const [showAssessment, setShowAssessment] = useState(false);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [answers, setAnswers] = useState<boolean[]>([]);
@@ -97,17 +99,17 @@ export default function StrokeRiskAssessment() {
           <div className="bg-white/20 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
             <Heart className="h-8 w-8 text-white" />
           </div>
-          <h3 className="text-2xl font-bold mb-6 text-white">Take Our Stroke Risk Assessment</h3>
+          <h3 className="text-2xl font-bold mb-6 text-white">{t("takeAssessment")}</h3>
           <motion.button 
             onClick={handleStartAssessment}
             className="bg-white text-purple-600 font-bold px-8 py-4 rounded-xl hover:bg-gray-50 transition-all shadow-lg hover:shadow-xl"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            Start Assessment
+            {t("startAssessment")}
           </motion.button>
           <p className="mt-4 text-white/70 text-sm">
-            *Adapted from the validated Framingham Stroke Risk Profile (FSRP), simplified for public use.
+            {t("fsrpNote")}
           </p>
         </div>
       </motion.div>

@@ -5,7 +5,7 @@ import { MapPin, Phone, Mail, Clock, AlertCircle, Heart, Activity, Brain } from 
 import Image from 'next/image';
 
 export const metadata: Metadata = {
-  title: 'What is Stroke | FamCare24/7',
+  title: 'What is Stroke | FamCare247',
   description: 'Learn about stroke, its types, symptoms, and burden in Malaysia.',
 };
 

@@ -42,7 +42,7 @@ export default function Hero() {
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.8, delay: 0.3 }}
               >
-                FamCare24/7
+                FamCare247
               </motion.h2>
               <motion.p
                 className="text-xl md:text-2xl font-medium text-purple-600"

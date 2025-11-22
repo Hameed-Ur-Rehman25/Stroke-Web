@@ -3,28 +3,31 @@
 import { motion } from "framer-motion"
 import { Heart, Users, Shield, Clock } from "lucide-react"
 import Image from "next/image"
+import { useLanguage } from "@/contexts/language-context"
 
 export default function CaregiverEmpathy() {
+  const { t } = useLanguage()
+  
   const caregivingChallenges = [
     {
       icon: <Heart className="h-8 w-8" />,
-      title: "Emotional Support",
-      description: "Caring for a stroke survivor can be emotionally overwhelming. You're not alone in feeling stressed, worried, or uncertain."
+      title: t("emotionalSupport"),
+      description: t("emotionalSupportDesc")
     },
     {
       icon: <Users className="h-8 w-8" />,
-      title: "Family Guidance",
-      description: "Every family's journey is different. We provide personalized advice that fits your unique situation and cultural context."
+      title: t("familyGuidance"),
+      description: t("familyGuidanceDesc")
     },
     {
       icon: <Shield className="h-8 w-8" />,
-      title: "Reliable Information",
-      description: "Cut through the confusion with medically-reviewed, culturally-appropriate guidance you can trust."
+      title: t("reliableInfo"),
+      description: t("reliableInfoDesc")
     },
     {
       icon: <Clock className="h-8 w-8" />,
-      title: "Always Available",
-      description: "Questions don't wait for office hours. Get support whenever you need it, day or night."
+      title: t("alwaysAvailable"),
+      description: t("alwaysAvailableDesc")
     }
   ]
 
@@ -40,11 +43,10 @@ export default function CaregiverEmpathy() {
             viewport={{ once: true }}
           >
             <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
-              You're Not Alone in This Journey
+              {t("notAlone")}
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              Caring for a stroke survivor is one of life's most challenging experiences. 
-              We understand the sleepless nights, the difficult decisions, and the overwhelming responsibility you feel.
+              {t("challengingExperience")}
             </p>
           </motion.div>
         </div>
@@ -134,12 +136,10 @@ export default function CaregiverEmpathy() {
         >
           <div className="bg-white rounded-2xl p-8 shadow-lg max-w-4xl mx-auto">
             <h3 className="text-2xl font-bold text-gray-800 mb-4">
-              Every Malaysian Family Deserves Support
+              {t("everyFamilyDeserves")}
             </h3>
             <p className="text-lg text-gray-600 leading-relaxed">
-              Whether you're in Kuala Lumpur, Penang, Johor, or anywhere in Malaysia, 
-              FamCare247 understands your cultural context and provides guidance that makes sense for your family. 
-              We're here to help you navigate this journey with confidence and compassion.
+              {t("everyFamilyDeservesDesc")}
             </p>
           </div>
         </motion.div>

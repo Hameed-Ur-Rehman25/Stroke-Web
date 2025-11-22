@@ -3,8 +3,10 @@
 import { Button } from "@/components/ui/button"
 import { motion } from "framer-motion"
 import { MapPin, Clock, Phone } from "lucide-react"
+import { useLanguage } from "@/contexts/language-context"
 
 export default function HospitalLocator() {
+  const { t } = useLanguage()
   return (
     <section id="hospital-locator" className="px-6 py-20 bg-gradient-to-br from-red-50 to-orange-50">
       <div className="max-w-7xl mx-auto">
@@ -16,10 +18,10 @@ export default function HospitalLocator() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
-            Stroke Hospital Locator
+            {t("hospitalLocator")}
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Find stroke-ready hospitals near you in Malaysia
+            {t("findHospitals")}
           </p>
         </motion.div>
 
@@ -97,13 +99,13 @@ export default function HospitalLocator() {
           >
             <div>
               <h3 className="text-3xl font-bold text-gray-800 mb-4">
-                Find stroke-ready hospitals near you.
+                {t("findNearYou")}
               </h3>
               <p className="text-xl text-gray-600 mb-2">
-                Know where to go in an emergency,
+                {t("knowWhereToGo")}
               </p>
               <p className="text-xl font-semibold text-red-600">
-                because in a stroke, every second counts.
+                {t("everySecondCounts")}
               </p>
             </div>
 
@@ -114,8 +116,8 @@ export default function HospitalLocator() {
                   <Clock className="h-6 w-6 text-red-600" />
                 </div>
                 <div>
-                  <h4 className="font-semibold text-gray-800">24/7 Emergency Care</h4>
-                  <p className="text-gray-600">Round-the-clock stroke treatment facilities</p>
+                  <h4 className="font-semibold text-gray-800">{t("emergency247")}</h4>
+                  <p className="text-gray-600">{t("emergency247Desc")}</p>
                 </div>
               </div>
 
@@ -124,8 +126,8 @@ export default function HospitalLocator() {
                   <MapPin className="h-6 w-6 text-blue-600" />
                 </div>
                 <div>
-                  <h4 className="font-semibold text-gray-800">GPS Navigation</h4>
-                  <p className="text-gray-600">Direct navigation to the nearest hospital</p>
+                  <h4 className="font-semibold text-gray-800">{t("gpsNavigation")}</h4>
+                  <p className="text-gray-600">{t("gpsNavigationDesc")}</p>
                 </div>
               </div>
 
@@ -134,8 +136,8 @@ export default function HospitalLocator() {
                   <Phone className="h-6 w-6 text-green-600" />
                 </div>
                 <div>
-                  <h4 className="font-semibold text-gray-800">Emergency Contacts</h4>
-                  <p className="text-gray-600">Direct contact information for each hospital</p>
+                  <h4 className="font-semibold text-gray-800">{t("emergencyContacts")}</h4>
+                  <p className="text-gray-600">{t("emergencyContactsDesc")}</p>
                 </div>
               </div>
             </div>
@@ -150,7 +152,7 @@ export default function HospitalLocator() {
                 className="bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white font-bold text-lg px-8 py-4 rounded-xl shadow-lg hover:shadow-xl transition-all flex items-center gap-3"
               >
                 <MapPin className="h-6 w-6" />
-                Find Now
+                {t("findNow")}
               </Button>
             </motion.div>
 
@@ -166,10 +168,10 @@ export default function HospitalLocator() {
                 </div>
                 <div>
                   <p className="text-sm font-medium text-red-800">
-                    Emergency: Call 999 immediately if someone shows stroke symptoms
+                    {t("emergencyNote")}
                   </p>
                   <p className="text-xs text-red-600 mt-1">
-                    Use BEFAST signs: Balance, Eyes, Face, Arms, Speech, Time
+                    {t("befastNote")}
                   </p>
                 </div>
               </div>

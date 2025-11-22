@@ -2,8 +2,10 @@
 
 import { motion } from "framer-motion"
 import { Target, Heart, Users, MapPin } from "lucide-react"
+import { useLanguage } from "@/contexts/language-context"
 
 export default function AboutFamCare() {
+  const { t } = useLanguage()
   const teamMembers = [
     "Dr. Anwar Fazal - PhD researcher focusing on mHealth for stroke family caregivers",
     "Prof. Madya Dr. Wan Asyraf - Consultant Neurologist", 
@@ -15,26 +17,26 @@ export default function AboutFamCare() {
   const sections = [
     {
       icon: <Target className="h-8 w-8" />,
-      title: "Mission",
-      content: "To make stroke caregiving easier, clearer, and better supported for every Malaysian family – anytime, anywhere. We believe every caregiver deserves guidance and every survivor deserves the best chance at recovery.",
+      title: t("mission"),
+      content: t("missionText"),
       color: "from-blue-500 to-blue-600"
     },
     {
       icon: <Heart className="h-8 w-8" />,
-      title: "Why We Built This",
-      content: "Stroke caregiving can feel overwhelming, confusing and lonely. After hospital discharge, many families struggle with medications, symptoms, appointments, rehab and knowing what to do in emergencies.\n\nWe built FamCare247 to give caregivers immediate, trustworthy answers through WhatsApp – the simplest and most familiar tool Malaysians already use every day.\n\nOur goal is to bring clarity, confidence and 24/7 support to every home caring for a stroke survivor.",
+      title: t("whyWeBuilt"),
+      content: t("whyWeBuiltText"),
       color: "from-purple-500 to-purple-600"
     },
     {
       icon: <Users className="h-8 w-8" />,
-      title: "Our Team",
+      title: t("ourTeam"),
       content: "FamCare247 is a Malaysian digital health initiative founded by Dr. Anwar Fazal, whose PhD research focuses on mHealth for stroke family caregivers.\n\nThe platform is co-developed with:",
       color: "from-green-500 to-green-600"
     },
     {
       icon: <MapPin className="h-8 w-8" />,
-      title: "Made for Malaysia",
-      content: "FamCare247 is created by Malaysians, for Malaysians – and is free to use.\n\nOur mission is to strengthen stroke recovery and caregiving nationwide by providing clear, trustworthy, and clinically aligned support – available 24/7.",
+      title: t("madeForMalaysia"),
+      content: t("madeForMalaysiaText"),
       color: "from-red-500 to-red-600"
     }
   ]
@@ -50,10 +52,10 @@ export default function AboutFamCare() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
-            About FamCare247
+            {t("aboutFamCare")}
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Empowering Malaysian families with expert stroke care guidance
+            {t("empoweringFamilies")}
           </p>
         </motion.div>
 
@@ -126,11 +128,10 @@ export default function AboutFamCare() {
         >
           <div className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl p-8 text-center">
             <h3 className="text-2xl font-bold text-gray-800 mb-4">
-              🇲🇾 Proudly Malaysian
+              {t("proudlyMalaysian")}
             </h3>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              Built with deep understanding of Malaysian healthcare systems, cultural values, and family dynamics. 
-              We're committed to supporting every Malaysian family affected by stroke, completely free of charge.
+              {t("proudlyMalaysianText")}
             </p>
           </div>
         </motion.div>

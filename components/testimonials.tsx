@@ -4,8 +4,10 @@ import { useState, useEffect } from "react"
 import { ChevronLeft, ChevronRight } from "lucide-react"
 import { motion, AnimatePresence } from "framer-motion"
 import Image from "next/image"
+import { useLanguage } from "@/contexts/language-context"
 
 export default function Testimonials() {
+  const { t } = useLanguage()
   const testimonials = [
     {
       name: "Aisyah M.",
@@ -55,9 +57,9 @@ export default function Testimonials() {
     <section className="px-6 py-16 bg-purple-50">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-14">
-          <h2 className="text-4xl font-bold text-slate-800 mb-2">Trusted by the stroke caregiving community</h2>
+          <h2 className="text-4xl font-bold text-slate-800 mb-2">{t("trustedBy")}</h2>
           <p className="text-xl text-slate-600">
-            Real stories from caregivers and healthcare professionals.
+            {t("realStories")}
           </p>
         </div>
         <div className="overflow-x-auto pb-4 -mx-6 px-6 scrollbar-hide scroll-smooth">
