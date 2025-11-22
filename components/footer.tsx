@@ -1,49 +1,119 @@
+"use client"
+
 import Link from "next/link"
-import { ChevronDown } from "lucide-react"
 
 export default function Footer() {
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id)
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' })
+    }
+  }
+
   return (
-    <footer className="py-4 px-6 bg-slate-800 border-t border-slate-600">
+    <footer className="bg-gray-900 text-gray-300 py-12 px-6">
       <div className="max-w-6xl mx-auto">
-        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-4">
-          <div className="flex flex-col gap-1">
-            <h3 className="font-bold text-lg text-blue-400">FamCare24/7</h3>
-            <p className="text-sm text-slate-300">Supporting stroke caregivers 24/7</p>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+          {/* Brand + Mission Statement */}
+          <div className="lg:col-span-1">
+            <div className="mb-4">
+              <h3 className="text-2xl font-bold text-white mb-2">FamCare247</h3>
+              <p className="text-sm text-gray-400 leading-relaxed">
+                Empowering Malaysia's stroke caregivers with 24/7 support through WhatsApp.
+              </p>
+            </div>
           </div>
-          
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            <div className="flex flex-col gap-2">
-              <h4 className="font-semibold text-blue-400">Company</h4>
-              <Link href="/about-us" className="text-sm text-slate-300 hover:text-blue-400 transition-colors">About Us</Link>
-              <Link href="/team" className="text-sm text-slate-300 hover:text-blue-400 transition-colors">Our Team</Link>
-              <Link href="/careers" className="text-sm text-slate-300 hover:text-blue-400 transition-colors">Careers</Link>
-            </div>
-            
-            <div className="flex flex-col gap-2">
-              <h4 className="font-semibold text-blue-400">Resources</h4>
-              <Link href="/blog" className="text-sm text-slate-300 hover:text-blue-400 transition-colors">Blog</Link>
-              <Link href="/research" className="text-sm text-slate-300 hover:text-blue-400 transition-colors">Research</Link>
-              <Link href="/faq" className="text-sm text-slate-300 hover:text-blue-400 transition-colors">FAQ</Link>
-            </div>
-            
-            <div className="flex flex-col gap-2">
-              <h4 className="font-semibold text-blue-400">Support</h4>
-              <Link href="/contact" className="text-sm text-slate-300 hover:text-blue-400 transition-colors">Contact</Link>
-              <Link href="/help" className="text-sm text-slate-300 hover:text-blue-400 transition-colors">Help Center</Link>
-              <Link href="/feedback" className="text-sm text-slate-300 hover:text-blue-400 transition-colors">Feedback</Link>
-            </div>
-            
-            <div className="flex flex-col gap-2">
-              <h4 className="font-semibold text-blue-400">Legal</h4>
-              <Link href="/privacy" className="text-sm text-slate-300 hover:text-blue-400 transition-colors">Privacy Policy</Link>
-              <Link href="/terms" className="text-sm text-slate-300 hover:text-blue-400 transition-colors">Terms of Service</Link>
-              <Link href="/cookies" className="text-sm text-slate-300 hover:text-blue-400 transition-colors">Cookie Policy</Link>
-            </div>
+
+          {/* Quick Links */}
+          <div>
+            <h4 className="text-white font-semibold mb-4 text-sm uppercase tracking-wider">Quick Links</h4>
+            <ul className="space-y-3">
+              <li>
+                <button
+                  onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                  className="text-sm text-gray-400 hover:text-white transition-colors text-left"
+                >
+                  Home
+                </button>
+              </li>
+              <li>
+                <button
+                  onClick={() => scrollToSection('how-it-works')}
+                  className="text-sm text-gray-400 hover:text-white transition-colors text-left"
+                >
+                  How It Works
+                </button>
+              </li>
+              <li>
+                <button
+                  onClick={() => scrollToSection('stroke-risk-assessment')}
+                  className="text-sm text-gray-400 hover:text-white transition-colors text-left"
+                >
+                  Stroke Risk Assessment
+                </button>
+              </li>
+              <li>
+                <button
+                  onClick={() => scrollToSection('hospital-locator')}
+                  className="text-sm text-gray-400 hover:text-white transition-colors text-left"
+                >
+                  Stroke Hospital Locator
+                </button>
+              </li>
+            </ul>
+          </div>
+
+          {/* Support */}
+          <div>
+            <h4 className="text-white font-semibold mb-4 text-sm uppercase tracking-wider">Support</h4>
+            <ul className="space-y-3">
+              <li>
+                <button
+                  onClick={() => scrollToSection('faq')}
+                  className="text-sm text-gray-400 hover:text-white transition-colors text-left"
+                >
+                  FAQ
+                </button>
+              </li>
+              <li>
+                <a
+                  href="mailto:hello@whitecoat.com.my"
+                  className="text-sm text-gray-400 hover:text-white transition-colors"
+                >
+                  Contact Support
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          {/* Legal Links */}
+          <div>
+            <h4 className="text-white font-semibold mb-4 text-sm uppercase tracking-wider">Legal Links</h4>
+            <ul className="space-y-3">
+              <li>
+                <Link href="/privacy-policy" className="text-sm text-gray-400 hover:text-white transition-colors">
+                  Privacy Policy
+                </Link>
+              </li>
+              <li>
+                <Link href="/terms-of-service" className="text-sm text-gray-400 hover:text-white transition-colors">
+                  Terms of Service
+                </Link>
+              </li>
+              <li>
+                <Link href="/medical-disclaimer" className="text-sm text-gray-400 hover:text-white transition-colors">
+                  Medical Disclaimer
+                </Link>
+              </li>
+            </ul>
           </div>
         </div>
-        
-        <div className="pt-4 border-t border-slate-600 text-center">
-          <p className="text-sm text-slate-400">&copy; 2024 FamCare24/7. All rights reserved.</p>
+
+        {/* Bottom Copyright */}
+        <div className="pt-8 border-t border-gray-800 text-center">
+          <p className="text-sm text-gray-500">
+            © 2025 FamCare247. All rights reserved.
+          </p>
         </div>
       </div>
     </footer>

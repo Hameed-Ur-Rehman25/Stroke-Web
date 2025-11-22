@@ -86,202 +86,30 @@ export default function StrokeRiskAssessment() {
     <section className="mb-12">
       {!showAssessment && (
         <>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
-        <motion.div 
-          className="bg-white p-5 rounded-lg shadow-sm border border-gray-100"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          whileHover={{ 
-            scale: 1.03, 
-            boxShadow: "0 10px 15px rgba(0, 0, 0, 0.1)",
-            borderColor: "rgba(239, 68, 68, 0.5)" 
-          }}
-        >
-          <div className="flex items-center gap-3 mb-4">
-            <motion.div 
-              className="bg-red-100 p-2 rounded-full"
-              whileHover={{ rotate: 5 }}
-            >
-              <AlertCircle className="h-6 w-6 text-red-600" />
-            </motion.div>
-            <h3 className="text-lg font-medium text-gray-800">High Blood Pressure</h3>
-          </div>
-          <div className="flex items-center justify-between">
-            <p className="text-gray-700">Risk Increase</p>
-            <motion.p 
-              className="text-2xl font-bold text-red-600"
-              initial={{ scale: 0.8 }}
-              animate={{ scale: 1 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-            >
-              +150%
-            </motion.p>
-          </div>
-          <p className="text-sm text-gray-600 mt-2">Individuals with hypertension have 2.5x higher risk of stroke</p>
-        </motion.div>
-        
-        <motion.div 
-          className="bg-white p-5 rounded-lg shadow-sm border border-gray-100"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.1 }}
-          whileHover={{ 
-            scale: 1.03, 
-            boxShadow: "0 10px 15px rgba(0, 0, 0, 0.1)",
-            borderColor: "rgba(249, 115, 22, 0.5)" 
-          }}
-        >
-          <div className="flex items-center gap-3 mb-4">
-            <motion.div 
-              className="bg-orange-100 p-2 rounded-full"
-              whileHover={{ rotate: 5 }}
-            >
-              <Activity className="h-6 w-6 text-orange-600" />
-            </motion.div>
-            <h3 className="text-lg font-medium text-gray-800">Atrial Fibrillation</h3>
-          </div>
-          <div className="flex items-center justify-between">
-            <p className="text-gray-700">Risk Increase</p>
-            <motion.p 
-              className="text-2xl font-bold text-orange-600"
-              initial={{ scale: 0.8 }}
-              animate={{ scale: 1 }}
-              transition={{ duration: 0.5, delay: 0.3 }}
-            >
-              +500%
-            </motion.p>
-          </div>
-          <p className="text-sm text-gray-600 mt-2">AFib increases stroke risk by 5x compared to those without</p>
-        </motion.div>
-        
-        <motion.div 
-          className="bg-white p-5 rounded-lg shadow-sm border border-gray-100"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          whileHover={{ 
-            scale: 1.03, 
-            boxShadow: "0 10px 15px rgba(0, 0, 0, 0.1)",
-            borderColor: "rgba(234, 179, 8, 0.5)" 
-          }}
-        >
-          <div className="flex items-center gap-3 mb-4">
-            <motion.div 
-              className="bg-yellow-100 p-2 rounded-full"
-              whileHover={{ rotate: 5 }}
-            >
-              <Heart className="h-6 w-6 text-yellow-600" />
-            </motion.div>
-            <h3 className="text-lg font-medium text-gray-800">Diabetes</h3>
-          </div>
-          <div className="flex items-center justify-between">
-            <p className="text-gray-700">Risk Increase</p>
-            <motion.p 
-              className="text-2xl font-bold text-yellow-600"
-              initial={{ scale: 0.8 }}
-              animate={{ scale: 1 }}
-              transition={{ duration: 0.5, delay: 0.4 }}
-            >
-              +200%
-            </motion.p>
-          </div>
-          <p className="text-sm text-gray-600 mt-2">People with diabetes have 2-3x higher stroke risk</p>
-        </motion.div>
-      </div>
-      
       <motion.div 
-        className="bg-white p-6 rounded-lg shadow-sm border border-indigo-100 mb-6"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.3 }}
-        whileHover={{ boxShadow: "0 10px 15px rgba(0, 0, 0, 0.05)" }}
-      >
-        <h3 className="text-xl font-medium mb-4 text-indigo-700">Risk by Age Group in Malaysia</h3>
-        <div className="space-y-4">
-          <div>
-            <div className="flex justify-between mb-1">
-              <span className="text-gray-700">Under 40 years</span>
-              <span className="text-indigo-700 font-medium">5%</span>
-            </div>
-            <div className="w-full bg-gray-200 rounded-full h-2.5">
-              <motion.div 
-                className="bg-indigo-600 h-2.5 rounded-full" 
-                initial={{ width: 0 }}
-                animate={{ width: '5%' }}
-                transition={{ duration: 1, delay: 0.5 }}
-              ></motion.div>
-            </div>
-          </div>
-          
-          <div>
-            <div className="flex justify-between mb-1">
-              <span className="text-gray-700">40-60 years</span>
-              <span className="text-indigo-700 font-medium">37%</span>
-            </div>
-            <div className="w-full bg-gray-200 rounded-full h-2.5">
-              <motion.div 
-                className="bg-indigo-600 h-2.5 rounded-full" 
-                initial={{ width: 0 }}
-                animate={{ width: '37%' }}
-                transition={{ duration: 1, delay: 0.6 }}
-              ></motion.div>
-            </div>
-          </div>
-          
-          <div>
-            <div className="flex justify-between mb-1">
-              <span className="text-gray-700">60-80 years</span>
-              <span className="text-indigo-700 font-medium">48%</span>
-            </div>
-            <div className="w-full bg-gray-200 rounded-full h-2.5">
-              <motion.div 
-                className="bg-indigo-600 h-2.5 rounded-full" 
-                initial={{ width: 0 }}
-                animate={{ width: '48%' }}
-                transition={{ duration: 1, delay: 0.7 }}
-              ></motion.div>
-            </div>
-          </div>
-          
-          <div>
-            <div className="flex justify-between mb-1">
-              <span className="text-gray-700">Above 80 years</span>
-              <span className="text-indigo-700 font-medium">10%</span>
-            </div>
-            <div className="w-full bg-gray-200 rounded-full h-2.5">
-              <motion.div 
-                className="bg-indigo-600 h-2.5 rounded-full" 
-                initial={{ width: 0 }}
-                animate={{ width: '10%' }}
-                transition={{ duration: 1, delay: 0.8 }}
-              ></motion.div>
-            </div>
-          </div>
-        </div>
-        <p className="text-xs text-gray-500 mt-4">Source: Malaysian Stroke Registry data analysis 2020-2023</p>
-      </motion.div>
-      
-      <motion.div 
-        className="bg-slate-800 rounded-lg p-6 text-white shadow-lg border border-slate-600"
+        className="bg-gradient-to-r from-purple-600 to-indigo-600 rounded-2xl p-8 text-white shadow-xl"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.4 }}
-        whileHover={{ scale: 1.01 }}
+        whileHover={{ scale: 1.02 }}
       >
-        <h3 className="text-xl font-bold mb-3 text-white">Take Our Stroke Risk Assessment</h3>
-        <p className="mb-2 text-slate-300 text-sm">
-          This stroke risk assessment tool is adapted from the validated Framingham Stroke Risk Profile (FSRP) and provides a simplified approach for public use.
-        </p>
-        <p className="mb-2 text-slate-200 font-medium">Answer the following questions to assess your risk of stroke</p>
-        <motion.button 
-          onClick={handleStartAssessment}
-          className="inline-block bg-blue-600 text-white font-medium px-6 py-3 rounded-full hover:bg-blue-700 transition duration-300"
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-        >
-          Start Assessment
-        </motion.button>
+        <div className="text-center">
+          <div className="bg-white/20 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+            <Heart className="h-8 w-8 text-white" />
+          </div>
+          <h3 className="text-2xl font-bold mb-6 text-white">Take Our Stroke Risk Assessment</h3>
+          <motion.button 
+            onClick={handleStartAssessment}
+            className="bg-white text-purple-600 font-bold px-8 py-4 rounded-xl hover:bg-gray-50 transition-all shadow-lg hover:shadow-xl"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            Start Assessment
+          </motion.button>
+          <p className="mt-4 text-white/70 text-sm">
+            *Adapted from the validated Framingham Stroke Risk Profile (FSRP), simplified for public use.
+          </p>
+        </div>
       </motion.div>
         </>
       )}
