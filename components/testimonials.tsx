@@ -75,7 +75,7 @@ export default function Testimonials() {
         <div className="overflow-x-auto pb-4 -mx-6 px-6 scrollbar-hide scroll-smooth">
           <div className="flex gap-6">
             {testimonials.map((t, i) => (
-              <div key={i} className="bg-white rounded-2xl shadow-lg px-6 py-8 flex flex-col items-center text-center border border-slate-100 w-[280px] md:w-[calc((100vw-12rem-4.5rem)/4)] lg:w-[calc((1152px-4.5rem)/4)] flex-shrink-0">
+              <div key={i} className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-lg shadow-purple-200/50 px-6 py-8 flex flex-col items-center text-center border border-slate-100/50 w-[280px] md:w-[calc((100vw-12rem-4.5rem)/4)] lg:w-[calc((1152px-4.5rem)/4)] flex-shrink-0">
               <Avatar className="w-20 h-20 mb-4 bg-purple-100">
                 <AvatarFallback className="text-purple-600 font-semibold text-lg bg-purple-100">
                   {getInitials(t.name)}
