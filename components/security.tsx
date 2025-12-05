@@ -1,7 +1,5 @@
 "use client"
 
-"use client"
-
 import { Lock, Shield, ShieldCheck } from "lucide-react"
 import { motion } from "framer-motion"
 import { useLanguage } from "@/contexts/language-context"
@@ -62,10 +60,10 @@ export default function Security() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.2 }}
               viewport={{ once: true }}
-              className="text-center group"
+              className="text-center group flex"
             >
-              <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 hover:bg-white/10 transition-all duration-300 group-hover:-translate-y-2 border border-white/10">
-                <div className={`bg-gradient-to-r ${feature.color} w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg`}>
+              <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 hover:bg-white/10 transition-all duration-300 group-hover:-translate-y-2 border border-white/10 flex flex-col h-full w-full">
+                <div className={`bg-gradient-to-r ${feature.color} w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg flex-shrink-0`}>
                   <div className="text-white">
                     {feature.icon}
                   </div>
@@ -75,7 +73,7 @@ export default function Security() {
                   {feature.title}
                 </h3>
                 
-                <p className="text-gray-300 leading-relaxed">
+                <p className="text-gray-300 leading-relaxed flex-grow">
                   {feature.description}
                 </p>
               </div>

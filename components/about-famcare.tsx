@@ -7,7 +7,6 @@ import { useLanguage } from "@/contexts/language-context"
 export default function AboutFamCare() {
   const { t } = useLanguage()
   const teamMembers = [
-    "Dr. Anwar Fazal - PhD researcher focusing on mHealth for stroke family caregivers",
     "Prof. Madya Dr. Wan Asyraf - Consultant Neurologist", 
     "Prof. Madya Dr. Aznida Firzah - Family Medicine Specialist",
     "Ms Tracy Chan - Experienced stroke caregiver and educator",

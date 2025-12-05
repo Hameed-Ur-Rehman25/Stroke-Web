@@ -62,7 +62,17 @@ export default function Hero() {
               transition={{ duration: 0.8, delay: 0.6 }}
             >
               <p className="text-gray-700 font-medium">
-                {t("problem")}
+                {(() => {
+                  const problemText = t("problem");
+                  const boldText = language === "EN" ? "You're not alone" : "Anda tidak keseorangan";
+                  const parts = problemText.split(boldText);
+                  return (
+                    <>
+                      {parts[0]}
+                      <span className="font-bold">{boldText}{parts[1] || "."}</span>
+                    </>
+                  );
+                })()}
               </p>
             </motion.div>
           </motion.div>

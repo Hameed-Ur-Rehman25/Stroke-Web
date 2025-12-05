@@ -3,11 +3,21 @@
 import { useState, useEffect } from "react"
 import { ChevronLeft, ChevronRight } from "lucide-react"
 import { motion, AnimatePresence } from "framer-motion"
-import Image from "next/image"
+import { Avatar, AvatarFallback } from "@/components/ui/avatar"
 import { useLanguage } from "@/contexts/language-context"
 
 export default function Testimonials() {
   const { t } = useLanguage()
+  
+  // Helper function to get initials from name
+  const getInitials = (name: string) => {
+    const parts = name.split(" ")
+    if (parts.length >= 2) {
+      return `${parts[0].charAt(0)}${parts[parts.length - 1].charAt(0)}`.toUpperCase()
+    }
+    return name.substring(0, 2).toUpperCase()
+  }
+  
   const testimonials = [
     {
       name: "Aisyah M.",
@@ -66,15 +76,11 @@ export default function Testimonials() {
           <div className="flex gap-6">
             {testimonials.map((t, i) => (
               <div key={i} className="bg-white rounded-2xl shadow-lg px-6 py-8 flex flex-col items-center text-center border border-slate-100 w-[280px] md:w-[calc((100vw-12rem-4.5rem)/4)] lg:w-[calc((1152px-4.5rem)/4)] flex-shrink-0">
-              <div className="w-20 h-20 rounded-full bg-purple-100 flex items-center justify-center overflow-hidden mb-4">
-                <Image
-                  src={t.avatar}
-                  alt={t.name}
-                  width={80}
-                  height={80}
-                  className="w-20 h-20 object-cover rounded-full"
-                />
-              </div>
+              <Avatar className="w-20 h-20 mb-4 bg-purple-100">
+                <AvatarFallback className="text-purple-600 font-semibold text-lg bg-purple-100">
+                  {getInitials(t.name)}
+                </AvatarFallback>
+              </Avatar>
               <h3 className="text-lg font-bold text-slate-800 mb-1">{t.name}</h3>
               <p className="text-sm text-purple-600 font-medium mb-4">{t.title}</p>
               <p className="text-slate-600 mb-5 text-[15px]">{t.testimonial}</p>
