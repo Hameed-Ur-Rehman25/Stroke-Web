@@ -16,6 +16,7 @@ export default function Community() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
           viewport={{ once: true, margin: "-100px" }}
+          className="text-center"
         >
           <h2 className="text-4xl font-bold text-slate-800 mb-4">{t("atRisk")}</h2>
           <p className="text-xl text-slate-600 mb-6">{t("answerQuestions")}</p>

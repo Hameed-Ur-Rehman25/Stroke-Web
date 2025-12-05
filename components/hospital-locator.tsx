@@ -21,7 +21,7 @@ export default function HospitalLocator() {
             {t("hospitalLocator")}
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            {t("findHospitals")}
+            {t("knowWhereToGo")}
           </p>
         </motion.div>
 
@@ -101,9 +101,10 @@ export default function HospitalLocator() {
               <h3 className="text-3xl font-bold text-gray-800 mb-4">
                 {t("findNearYou")}
               </h3>
-              <p className="text-xl text-gray-600 mb-2">
+              {/* Commented out because it's the same as the title */}
+              {/* <p className="text-xl text-gray-600 mb-2">
                 {t("knowWhereToGo")}
-              </p>
+              </p> */}
               <p className="text-xl font-semibold text-red-600">
                 {t("everySecondCounts")}
               </p>

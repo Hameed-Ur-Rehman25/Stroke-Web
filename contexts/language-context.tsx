@@ -50,25 +50,24 @@ const translations = {
     // Stroke Risk Assessment
     "atRisk": "Are you at risk of stroke?",
     "answerQuestions": "Answer a few short questions to find out.",
-    "takeAssessment": "Take Our Stroke Risk Assessment",
+    "takeAssessment": "Take Stroke Risk Assessment",
     "startAssessment": "Start Assessment",
     "fsrpNote": "*Adapted from the validated Framingham Stroke Risk Profile (FSRP), simplified for public use.",
     
     // Hospital Locator
     "hospitalLocator": "Stroke Hospital Locator",
-    "findHospitals": "Find stroke-ready hospitals near you in Malaysia",
-    "findNearYou": "Find stroke-ready hospitals near you.",
-    "knowWhereToGo": "Know where to go in an emergency,",
+    "findNearYou": "Find stroke-ready hospitals near you in Malaysia",
+    "knowWhereToGo": "Know where to go in an emergency.",
     "everySecondCounts": "because in a stroke, every second counts.",
     "findNow": "Find Now",
     "emergency247": "24/7 Emergency Care",
-    "emergency247Desc": "Round-the-clock stroke treatment facilities",
+    "emergency247Desc": "Round-the-clock stroke treatment facilities.",
     "gpsNavigation": "GPS Navigation",
-    "gpsNavigationDesc": "Direct navigation to the nearest hospital",
+    "gpsNavigationDesc": "Direct navigation to the nearest hospital.",
     "emergencyContacts": "Emergency Contacts",
-    "emergencyContactsDesc": "Direct contact information for each hospital",
-    "emergencyNote": "Emergency: Call 999 immediately if someone shows stroke symptoms",
-    "befastNote": "Use BEFAST signs: Balance, Eyes, Face, Arms, Speech, Time",
+    "emergencyContactsDesc": "Direct contact information for each hospital.",
+    "emergencyNote": "Emergency: Call 999 immediately if someone shows stroke symptoms.",
+    "befastNote": "Use BEFAST signs: Balance, Eyes, Face, Arms, Speech, Time.",
     
     // Caregiver Empathy
     "notAlone": "You're Not Alone in This Journey",
