@@ -116,24 +116,6 @@ export default function AboutFamCare() {
             </motion.div>
           ))}
         </div>
-
-        {/* Bottom Highlight */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          viewport={{ once: true }}
-          className="mt-16"
-        >
-          <div className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl p-8 text-center">
-            <h3 className="text-2xl font-bold text-gray-800 mb-4">
-              {t("proudlyMalaysian")}
-            </h3>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              {t("proudlyMalaysianText")}
-            </p>
-          </div>
-        </motion.div>
       </div>
     </section>
   )

@@ -83,7 +83,7 @@ export default function HospitalLocator() {
               {/* Map Info */}
               <div className="mt-4 text-center">
                 <p className="text-sm text-gray-600">
-                  Interactive map showing stroke-ready hospitals across Malaysia
+                  Interactive map of stroke-ready hospitals across Malaysia
                 </p>
               </div>
             </div>

@@ -8,6 +8,7 @@ import Testimonials from "@/components/testimonials"
 import Security from "@/components/security"
 import AboutFamCare from "@/components/about-famcare"
 import FAQ from "@/components/faq"
+import ProudlyMalaysian from "@/components/proudly-malaysian"
 
 export default function Home() {
   return (
@@ -22,6 +23,7 @@ export default function Home() {
       <Security />
       <AboutFamCare />
       <FAQ />
+      <ProudlyMalaysian />
     </div>
   )
 }
