@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react"
 import { ChevronLeft, ChevronRight } from "lucide-react"
 import { motion, AnimatePresence } from "framer-motion"
-import { Avatar, AvatarFallback } from "@/components/ui/avatar"
+import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar"
 import { useLanguage } from "@/contexts/language-context"
 
 export default function Testimonials() {
@@ -22,42 +22,42 @@ export default function Testimonials() {
     {
       name: "Aisyah M.",
       title: "Stroke Caregiver",
-      avatar: "/avatar-woman.png",
+      avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&h=200&fit=crop&crop=faces",
       testimonial:
         "FamCare247 makes caregiving so much easier. The explanations are simple, and the emergency guidance helped calm me during stressful moments.",
     },
     {
       name: "Rajesh K.",
       title: "Son of Stroke Survivor",
-      avatar: "/avatar-man.png",
+      avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=faces",
       testimonial:
         "The WhatsApp support is fast, clear, and available anytime. It really helped my family understand what to do during recovery.",
     },
     {
       name: "Li Xuan L.",
       title: "Physiotherapist",
-      avatar: "/avatar-doctor.png",
+      avatar: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=200&h=200&fit=crop&crop=faces",
       testimonial:
         "I recommend FamCare247 to patients' families because it gives practical home-care tips and reliable stroke information instantly.",
     },
     {
       name: "Hafiz S.",
       title: "Nurse, Acute Stroke Unit",
-      avatar: "/avatar-doctor.png",
+      avatar: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=200&h=200&fit=crop&crop=faces",
       testimonial:
         "This tool is very useful for caregivers who feel overwhelmed. It provides accurate guidance and helps them stay prepared.",
     },
     {
       name: "Dr. Farah Nabila",
       title: "Neurologist",
-      avatar: "/avatar-doctor.png",
+      avatar: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=200&h=200&fit=crop&crop=faces",
       testimonial:
         "FamCare247 is a helpful companion for families navigating stroke recovery. It makes complex information easy to understand and empowers caregivers to respond confidently.",
     },
     {
       name: "Adam T.",
       title: "Stroke Survivor",
-      avatar: "/avatar-man.png",
+      avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200&h=200&fit=crop&crop=faces",
       testimonial:
         "Having FamCare247 on WhatsApp gave me confidence during my recovery. The tips and reminders helped me stay consistent with exercises and medications.",
     },
@@ -77,6 +77,10 @@ export default function Testimonials() {
             {testimonials.map((t, i) => (
               <div key={i} className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-lg shadow-purple-200/50 px-6 py-8 flex flex-col items-center text-center border border-slate-100/50 w-[280px] md:w-[calc((100vw-12rem-4.5rem)/4)] lg:w-[calc((1152px-4.5rem)/4)] flex-shrink-0">
               <Avatar className="w-20 h-20 mb-4 bg-purple-100">
+                <AvatarImage 
+                  src={t.avatar}
+                  alt={t.name}
+                />
                 <AvatarFallback className="text-purple-600 font-semibold text-lg bg-purple-100">
                   {getInitials(t.name)}
                 </AvatarFallback>
