@@ -24,9 +24,9 @@ export default function Footer() {
                 <Image
                   src="/wide-logo.png"
                   alt="FamCare247"
-                  width={150}
-                  height={40}
-                  className="h-8 w-auto object-contain"
+                  width={180}
+                  height={60}
+                  className="h-15 w-auto object-contain"
                   priority
                 />
               </Link>
