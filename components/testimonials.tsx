@@ -20,46 +20,40 @@ export default function Testimonials() {
   
   const testimonials = [
     {
-      name: "Aisyah M.",
-      title: "Stroke Caregiver",
+      name: t("testimonial1Name"),
+      title: t("testimonial1Title"),
       avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&h=200&fit=crop&crop=faces",
-      testimonial:
-        "FamCare247 makes caregiving so much easier. The explanations are simple, and the emergency guidance helped calm me during stressful moments.",
+      testimonial: t("testimonial1Text"),
     },
     {
-      name: "Rajesh K.",
-      title: "Son of Stroke Survivor",
+      name: t("testimonial2Name"),
+      title: t("testimonial2Title"),
       avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=faces",
-      testimonial:
-        "The WhatsApp support is fast, clear, and available anytime. It really helped my family understand what to do during recovery.",
+      testimonial: t("testimonial2Text"),
     },
     {
-      name: "Li Xuan L.",
-      title: "Physiotherapist",
+      name: t("testimonial3Name"),
+      title: t("testimonial3Title"),
       avatar: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=200&h=200&fit=crop&crop=faces",
-      testimonial:
-        "I recommend FamCare247 to patients' families because it gives practical home-care tips and reliable stroke information instantly.",
+      testimonial: t("testimonial3Text"),
     },
     {
-      name: "Hafiz S.",
-      title: "Nurse, Acute Stroke Unit",
+      name: t("testimonial4Name"),
+      title: t("testimonial4Title"),
       avatar: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=200&h=200&fit=crop&crop=faces",
-      testimonial:
-        "This tool is very useful for caregivers who feel overwhelmed. It provides accurate guidance and helps them stay prepared.",
+      testimonial: t("testimonial4Text"),
     },
     {
-      name: "Dr. Farah Nabila",
-      title: "Neurologist",
+      name: t("testimonial5Name"),
+      title: t("testimonial5Title"),
       avatar: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=200&h=200&fit=crop&crop=faces",
-      testimonial:
-        "FamCare247 is a helpful companion for families navigating stroke recovery. It makes complex information easy to understand and empowers caregivers to respond confidently.",
+      testimonial: t("testimonial5Text"),
     },
     {
-      name: "Adam T.",
-      title: "Stroke Survivor",
+      name: t("testimonial6Name"),
+      title: t("testimonial6Title"),
       avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200&h=200&fit=crop&crop=faces",
-      testimonial:
-        "Having FamCare247 on WhatsApp gave me confidence during my recovery. The tips and reminders helped me stay consistent with exercises and medications.",
+      testimonial: t("testimonial6Text"),
     },
   ]
 
