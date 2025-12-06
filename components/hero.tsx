@@ -81,20 +81,35 @@ export default function Hero() {
           {/* Right Side - Hero Image */}
           <motion.div 
             className="flex justify-center lg:justify-end"
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
+            initial={{ opacity: 0, x: 50, scale: 0.9 }}
+            animate={{ opacity: 1, x: 0, scale: 1 }}
+            transition={{ 
+              duration: 1, 
+              delay: 0.4,
+              ease: [0.25, 0.1, 0.25, 1] // Custom ease-in-out curve
+            }}
           >
-            <div className="relative w-full max-w-lg">
-              <Image
-                src={language === "EN" ? "/EN-hero_image.png" : "/MY-hero_image.png"}
-                alt="FamCare247 Hero"
-                width={800}
-                height={800}
-                className="w-full h-auto object-contain"
-                priority
-              />
-            </div>
+            <motion.div 
+              className="relative w-full max-w-lg"
+              whileHover={{ scale: 1.02 }}
+              transition={{ duration: 0.3 }}
+            >
+              <div className="relative">
+                <Image
+                  src={language === "EN" ? "/EN-hero_image.png" : "/MY-hero_image.png"}
+                  alt="FamCare247 Hero"
+                  width={800}
+                  height={800}
+                  className="w-full h-auto object-contain drop-shadow-2xl"
+                  priority
+                  style={{
+                    filter: 'drop-shadow(0 25px 50px -12px rgba(0, 0, 0, 0.25))'
+                  }}
+                />
+                {/* Additional shadow layer for depth */}
+                <div className="absolute inset-0 bg-gradient-to-br from-purple-200/20 to-blue-200/20 rounded-2xl blur-3xl -z-10"></div>
+              </div>
+            </motion.div>
           </motion.div>
         </div>
       </div>
