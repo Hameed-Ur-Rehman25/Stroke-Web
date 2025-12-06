@@ -11,6 +11,13 @@ export default function Hero() {
 
   return (
     <section className="px-6 pt-8 pb-16 bg-gradient-to-br from-blue-50 to-indigo-50 min-h-screen relative overflow-hidden">
+      {/* Background Text Effect */}
+      <div className="absolute bottom-0 left-0 right-0 flex items-end justify-center pointer-events-none z-0 pb-2 md:pb-4 lg:pb-1">
+        <h1 className="text-[5rem] md:text-[8rem] lg:text-[12rem] xl:text-[14rem] 2xl:text-[16rem] font-black text-blue-200/40 select-none">
+          FamCare247
+        </h1>
+      </div>
+
       {/* Language Switcher - Top Right */}
       <div className="absolute top-6 right-6 z-10">
         <motion.button
@@ -24,7 +31,7 @@ export default function Hero() {
         </motion.button>
       </div>
 
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-7xl mx-auto relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center min-h-[80vh]">
           {/* Left Side - Content */}
           <motion.div 
@@ -90,7 +97,7 @@ export default function Hero() {
             }}
           >
             <motion.div 
-              className="relative w-full max-w-lg"
+              className="relative w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-md xl:max-w-lg 2xl:max-w-lg"
               whileHover={{ scale: 1.02 }}
               transition={{ duration: 0.3 }}
             >
@@ -102,6 +109,7 @@ export default function Hero() {
                   height={800}
                   className="w-full h-auto object-contain drop-shadow-2xl"
                   priority
+                  sizes="(max-width: 640px) 100vw, (max-width: 768px) 90vw, (max-width: 1024px) 80vw, (max-width: 1280px) 70vw, 60vw"
                   style={{
                     filter: 'drop-shadow(0 25px 50px -12px rgba(0, 0, 0, 0.25))'
                   }}
