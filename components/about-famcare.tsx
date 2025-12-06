@@ -41,7 +41,7 @@ export default function AboutFamCare() {
   ]
 
   return (
-    <section className="px-6 py-20 bg-white">
+    <section id="about" className="px-6 py-20 bg-white">
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
