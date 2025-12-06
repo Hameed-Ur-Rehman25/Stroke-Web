@@ -13,21 +13,21 @@ export default function Hero() {
     <section className="px-6 pt-8 pb-16 bg-gradient-to-br from-blue-50 to-indigo-50 min-h-screen relative overflow-hidden">
       {/* Background Text Effect */}
       <div className="absolute bottom-0 left-0 right-0 flex items-end justify-center pointer-events-none z-0 pb-2 md:pb-4 lg:pb-1">
-        <h1 className="text-[5rem] md:text-[8rem] lg:text-[12rem] xl:text-[14rem] 2xl:text-[16rem] font-black text-blue-200/40 select-none">
+        <h1 className="text-[3.5rem] md:text-[8rem] lg:text-[12rem] xl:text-[14rem] 2xl:text-[16rem] font-black text-blue-200/40 select-none">
           FamCare247
         </h1>
       </div>
 
       {/* Language Switcher - Top Right */}
-      <div className="absolute top-6 right-6 z-10">
+      <div className="absolute top-3 right-3 sm:top-4 sm:right-4 md:top-6 md:right-6 z-10">
         <motion.button
           onClick={toggleLanguage}
-          className="flex items-center gap-2 bg-white/90 backdrop-blur-sm border border-gray-200 rounded-full px-4 py-2 shadow-sm hover:shadow-md transition-all"
+          className="flex items-center justify-center gap-1.5 sm:gap-2 bg-white/95 backdrop-blur-sm border border-gray-200 rounded-full px-3 py-2 sm:px-4 sm:py-2 md:px-4 md:py-2 shadow-md hover:shadow-lg transition-all min-w-[60px] sm:min-w-auto"
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
         >
-          <Globe className="h-4 w-4 text-gray-600" />
-          <span className="text-sm font-medium text-gray-700">{language}</span>
+          <Globe className="h-4 w-4 sm:h-4 sm:w-4 md:h-5 md:w-5 text-gray-600 flex-shrink-0" />
+          <span className="text-xs sm:text-sm md:text-base font-semibold text-gray-700 whitespace-nowrap">{language}</span>
         </motion.button>
       </div>
 
