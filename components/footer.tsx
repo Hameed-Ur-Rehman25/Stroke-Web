@@ -1,6 +1,7 @@
 "use client"
 
 import Link from "next/link"
+import Image from "next/image"
 import { useLanguage } from "@/contexts/language-context"
 
 export default function Footer() {
@@ -19,7 +20,16 @@ export default function Footer() {
           {/* Brand + Mission Statement */}
           <div className="lg:col-span-1">
             <div className="mb-4">
-              <h3 className="text-2xl font-bold text-white mb-2">FamCare247</h3>
+              <Link href="/" className="inline-block mb-2">
+                <Image
+                  src="/wide-logo.png"
+                  alt="FamCare247"
+                  width={150}
+                  height={40}
+                  className="h-8 w-auto object-contain"
+                  priority
+                />
+              </Link>
               <p className="text-sm text-gray-400 leading-relaxed">
                 {t("footerMission")}
               </p>
