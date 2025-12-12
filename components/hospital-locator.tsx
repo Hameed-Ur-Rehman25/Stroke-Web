@@ -148,13 +148,20 @@ export default function HospitalLocator() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <Button 
-                size="lg"
-                className="bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white font-bold text-lg px-8 py-4 rounded-xl shadow-lg hover:shadow-xl transition-all flex items-center gap-3"
+              <a 
+                href="https://patient.boehringer-ingelheim.com/my/my-stroke-hospital/locate"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block"
               >
-                <MapPin className="h-6 w-6" />
-                {t("findNow")}
-              </Button>
+                <Button 
+                  size="lg"
+                  className="bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white font-bold text-lg px-8 py-4 rounded-xl shadow-lg hover:shadow-xl transition-all flex items-center gap-3 w-full"
+                >
+                  <MapPin className="h-6 w-6" />
+                  {t("findNow")}
+                </Button>
+              </a>
             </motion.div>
 
             {/* Emergency Note */}
